@@ -1,0 +1,149 @@
+# Reference copies — TV Android / TV Game / Sleep (deployed to /config/automations.yaml)
+
+These three automations are ANDY'S PERSONAL automations in `automations.yaml`
+(UI-editable file), NOT the miniDSP package — they orchestrate the TV and lights
+and CALL into the package (`automation.minidsp_input_toslink` / `_usb`).
+Deployed from this repo 2026-10-11 (housekeeping pass); the box file is the live
+artifact — edit either side and re-sync. Entity-slug gotcha: the 'TV Game'
+automation's entity is `automation.tv_ps3` (slug from the original PS3-era
+object id, renamed in the UI since). Backup of the pre-housekeeping file:
+`/config/automations.yaml.bak-20261011` on the HA box.
+
+---
+
+- id: '1623973427395'
+  alias: TV Android
+  description: 'Wake the TV, wait for readiness, select the Android input with verification,
+    and set the Flex to TOSLINK + TV level (housekeeping 2026-10-11: added the miniDSP
+    step; removed the stale media_pause targeting binary_sensor.alarm_upcoming).'
+  triggers: []
+  conditions: []
+  actions:
+  - action: automation.trigger
+    data: {}
+    target:
+      entity_id: automation.minidsp_input_toslink
+  - if:
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: media_player.lg_webos_tv_oled55b7p
+        state: 'on'
+    then:
+    - data:
+        mac: 38:8C:50:D5:79:C3
+        broadcast_address: 192.168.0.255
+      action: wake_on_lan.send_magic_packet
+  - wait_template: "{{ states('media_player.lg_webos_tv_oled55b7p') not in ['off',
+      'unavailable', 'unknown'] }}"
+    timeout: 45
+    continue_on_timeout: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
+  - repeat:
+      while:
+      - condition: template
+        value_template: "{{ state_attr('media_player.lg_webos_tv_oled55b7p', 'source')
+          != 'Android' }}"
+      - condition: template
+        value_template: "{{ repeat.index <= 8 }}"
+      sequence:
+      - data:
+          source: Android
+        target:
+          entity_id: media_player.lg_webos_tv_oled55b7p
+        action: media_player.select_source
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 4
+          milliseconds: 0
+  mode: single
+
+- id: '1666652587352'
+  alias: TV Game
+  description: 'Wake the TV (if off), wait for readiness, select the Game input with
+    verification, and set the Flex to TOSLINK + TV level (housekeeping 2026-10-11:
+    was a bare select_source with no power handling and no miniDSP step).'
+  triggers: []
+  conditions: []
+  actions:
+  - action: automation.trigger
+    data: {}
+    target:
+      entity_id: automation.minidsp_input_toslink
+  - if:
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: media_player.lg_webos_tv_oled55b7p
+        state: 'on'
+    then:
+    - data:
+        mac: 38:8C:50:D5:79:C3
+        broadcast_address: 192.168.0.255
+      action: wake_on_lan.send_magic_packet
+  - wait_template: "{{ states('media_player.lg_webos_tv_oled55b7p') not in ['off',
+      'unavailable', 'unknown'] }}"
+    timeout: 45
+    continue_on_timeout: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
+  - repeat:
+      while:
+      - condition: template
+        value_template: "{{ state_attr('media_player.lg_webos_tv_oled55b7p', 'source')
+          != 'Game' }}"
+      - condition: template
+        value_template: "{{ repeat.index <= 8 }}"
+      sequence:
+      - data:
+          source: Game
+        target:
+          entity_id: media_player.lg_webos_tv_oled55b7p
+        action: media_player.select_source
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 4
+          milliseconds: 0
+  mode: single
+
+- id: '1648172532326'
+  alias: Sleep
+  description: 'TV off, entry + bedroom lights off, bed plug off, Flex to USB music
+    level (housekeeping 2026-10-11: added entry light + miniDSP step; replaced the
+    stale device_id target with the bed-plug switch entity).'
+  triggers: []
+  conditions: []
+  actions:
+  - data:
+      skip_condition: true
+    target:
+      entity_id: automation.tv_off
+    action: automation.trigger
+  - data: {}
+    action: shell_command.rotel_speaker_a
+  - action: light.turn_off
+    data: {}
+    target:
+      entity_id: light.living_room_entry_light
+  - action: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.bedroom_bed_plug
+  - action: light.turn_off
+    data: {}
+    target:
+      entity_id: light.bedroom_bedroom
+  - action: automation.trigger
+    data: {}
+    target:
+      entity_id: automation.minidsp_input_usb
+  mode: single

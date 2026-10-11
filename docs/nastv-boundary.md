@@ -18,12 +18,22 @@ what NASTV code is allowed to do.
 
 | Package automation/script | Fires when | Triggered from |
 |---|---|---|
-| `minidsp_input_toslink` (+ TV level) | TV becomes the active source | nastv HA plugin's power→automation mapping ("TV Android" power-on: wake-on-LAN → wait webOS → select_source retry) |
-| `minidsp_input_usb` (music level) | Pi playback is the active source | manual (widget) today |
+| `minidsp_input_toslink` (+ TV level −24) | TV becomes the active source | **`automation.tv_android`** ("TV Android": WoL → wait → select Android with retry → this) and **`automation.tv_ps3`** ("TV Game": WoL → wait → select Game with retry → this) — both as the FIRST step, before the TV wakes |
+| `minidsp_input_usb` (music level −30) | bedtime music mode | **`automation.sleep`** ("Sleep": TV off → entry light off → bed plug off → bedroom light off → this) |
 | `minidsp_input_bluetooth` | phone streaming | manual (widget) |
 | `late_night_listening` / `daytime_listening` | scene pair | manual (widget) |
 | `minidsp_volume_up/down`, mute | runtime level | manual (widget); NASTV does not drive these |
 | `minidsp daemon watchdog` | sensor unavailable 2 min | HA only (phone notification) |
+
+Housekeeping verified live 2026-10-11 (all three end-to-end; reference copies of the
+three TV/lights orchestrators: [ha/automations-tv-game-sleep.yaml](../ha/automations-tv-game-sleep.yaml)):
+**TV Android** had NO Flex step and a stale final `media_pause` targeting
+`binary_sensor.alarm_upcoming` (removed); **TV Game** was a bare `select_source` (now
+mirrors TV Android's power handling); **Sleep** had no entry light, no miniDSP step,
+and a stale device_id where the bed plug belonged. Known leftovers: the
+entity-slug trap (`automation.tv_ps3` IS "TV Game") and Sleep still fires
+`shell_command.rotel_speaker_a` (mains CUT toggle — pre-Flex behavior, NOT in Andy's
+sleep spec; second Sleep run would toggle mains back ON. Removal candidate).
 
 Adding a NASTV-driven behavior = add/extend an automation HERE, then point the
 nastv side at the HA automation/script name. The nastv side should know entity

@@ -75,6 +75,7 @@ control client alongside `minidspd`.
 | [docs/manual-notes.md](docs/manual-notes.md) | Front-panel gestures, presets, inputs — the manual distilled, with the full text one click away |
 | [reference/flex-eight-dl-manual.txt](reference/flex-eight-dl-manual.txt) | The complete official Flex Eight (DL) manual as text (fetched from docs.minidsp.com `print_page.html`) |
 | [ha/minidsp.yaml](ha/minidsp.yaml) | **The canonical Home Assistant package** (master — the file deployed to the HA box; docs/home-assistant.md has the recipe) |
+| [ha/automations-tv-game-sleep.yaml](ha/automations-tv-game-sleep.yaml) | Reference copies of the three personal orchestrators that call INTO the package (TV Android, TV Game, Sleep) — deployed to the box's `automations.yaml` |
 
 ## If you're setting up a Flex Eight for network control, read these first
 
