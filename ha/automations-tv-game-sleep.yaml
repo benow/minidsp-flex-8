@@ -4,8 +4,8 @@ These three automations are ANDY'S PERSONAL automations in `automations.yaml`
 (UI-editable file), NOT the miniDSP package — they orchestrate the TV and lights
 and CALL into the package (`automation.minidsp_input_toslink` / `_usb`).
 Deployed from this repo 2026-10-11 (housekeeping pass; Daily Reset — the
-05:00 blind speaker-A toggle — was REMOVED, subsumed by the package's
-tracker-guarded morning_reset); the box file is the live
+05:00 blind speaker-A toggle — was briefly removed, then RESTORED same-day with
+a boolean toggle alongside, per Andy's widget requirement); the box file is the live
 artifact — edit either side and re-sync. Entity-slug gotcha: the 'TV Game'
 automation's entity is `automation.tv_ps3` (slug from the original PS3-era
 object id, renamed in the UI since). Backup of the pre-housekeeping file:

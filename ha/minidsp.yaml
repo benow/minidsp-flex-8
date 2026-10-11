@@ -330,19 +330,16 @@ automation:
   - id: daytime_listening
     alias: Daytime listening
     description: >
-      Ensure the mains are ON (toggle only when the tracker says off — the old
-      unconditional toggle could switch them OFF) and restore the TV listening level.
+      UNCONDITIONAL speaker-A toggle + TV listening level — restored 2026-10-11 after
+      Andy's widgets broke (he toggles the mains from here; do NOT make this
+      conditional). The assumed-state boolean is FLIPPED to match the toggle, keeping
+      the tracker consistent.
     triggers: []
     conditions: []
     actions:
-      - if:
-          - condition: state
-            entity_id: input_boolean.rotel_speakers_a
-            state: "off"
-        then:
-          - action: shell_command.rotel_speaker_a
-            data: {}
-      - action: input_boolean.turn_on
+      - action: shell_command.rotel_speaker_a
+        data: {}
+      - action: input_boolean.toggle
         target:
           entity_id: input_boolean.rotel_speakers_a
         data: {}
@@ -359,9 +356,10 @@ automation:
       music level, Rotel mute explicitly OFF, mains ensured ON via the assumed-state
       tracker (toggles only if the boolean says off, so it is idempotent). The
       third listening mode (TV watching) is set by the TV Android / TV Game
-      orchestrators; nighttime is late_night_listening. Replaces the old
-      "Daily Reset" blind speaker-A toggle (05:00, removed from automations.yaml
-      2026-10-11 — a blind toggle flips mains OFF whenever they were already on).
+      orchestrators; nighttime is late_night_listening. NOTE: the personal
+      speaker-toggle paths (daytime_listening, Daily Reset) are UNCONDITIONAL
+      TOGGLES by Andy's requirement — this automation is the tracker-guarded,
+      hands-off complement, not their replacement.
     triggers:
       - trigger: time
         at: "07:45:00"

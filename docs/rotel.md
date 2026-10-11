@@ -46,9 +46,17 @@ Commands: `opt1, opt2, usb, pc_usb, aux1, aux2, power_on/off, volume_40..80
   input and volume now.
 - The `shell_command` layer itself **SURVIVES**: `rotel_speaker_a` (mains ensure/cut via
   the tracker), `rotel_mute_off` (morning reset), power on/off.
-- The old **Daily Reset** automation (05:00 blind `rotel_speaker_a` toggle) was
-  **REMOVED 2026-10-11** — subsumed by the package's tracker-guarded `morning_reset`
-  (07:45); a blind toggle cuts the mains whenever they were already on.
+- **Daily Reset is RESTORED** (05:00 unconditional `rotel_speaker_a` toggle, now with
+  a boolean `toggle` alongside so the tracker stays honest) — Andy's speaker-toggle
+  paths (`daytime_listening`, Daily Reset) must stay UNCONDITIONAL TOGGLES; a
+  tracker-guarded "ensure" broke his widgets (2026-10-11) and was reverted same-day.
+  `morning_reset` (07:45, tracker-guarded ensure) still handles the hands-off case.
+- **Amp-wedge incident (2026-10-11)**: the amp itself once stopped responding to
+  EVERYTHING — front-panel speaker buttons AND serial (all commands accepted with zero
+  effect/response) — during the tracker work; a power cycle healed both. The no-read-back
+  evidence above was gathered while in this state, so "the amp never transmits" is
+  slightly less certain than it looks; the practical conclusion (no feedback available)
+  stands.
 - HA never touches the Flex's USB — only `minidspd` does; the Rotel serial port and
   the daemon are unrelated transports.
 
