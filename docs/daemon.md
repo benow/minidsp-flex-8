@@ -96,3 +96,22 @@ fine; a second *USB* client is not.
 Upgrades run through **Device Console over USB** (the daemon cannot push firmware) or
 the miniDSP BT Update app over Bluetooth. Changelog:
 [minidsp.com/support/device-console-changelog](https://www.minidsp.com/support/device-console-changelog).
+
+## USB audio input constraints (probe of hw:CARD=DL,DEV=0, 2026-10-10)
+
+The Flex's USB audio interface is **S32_LE-only** — anything driving it over ALSA
+`hw:` must deliver 32-bit little-endian samples:
+
+| Constraint | Value |
+|---|---|
+| Formats | **S32_LE only** (S16_LE and S24_3LE both rejected at hw_params install) |
+| Channels | 2 (stereo only) |
+| Rate | 44 100 – 192 000 Hz |
+| Period size | 8 – 192 000 frames |
+| Periods per buffer | 2 – 1024 |
+| Buffer size | 16 – 384 000 frames |
+
+The ranges are generous — a naive "invalid argument" from `snd_pcm_hw_params` with
+16/24-bit data is the FORMAT being rejected, not the buffer sizes. Feeding 16/24-bit
+sources works by widening each sample into the S32 MSBs (bit-exact shift, no dither);
+the player's `alsaplay` does exactly that, plus mono→stereo upmix.

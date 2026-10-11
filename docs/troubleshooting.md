@@ -69,3 +69,28 @@ Input Volume Offset in Device Console (+10 dB on Bluetooth) —
 
 The device **silently clamps** out-of-range volume writes to [−127.5, 0]. Our HA
 number helper clamps client-side to [−80, 0] to keep the slider meaningful.
+
+## Audio "playing" end to end but ZERO sound (renderer-side, 2026-10-11)
+
+Symptom: the full push chain is green — session created, ticket issued, bytes flowing
+at the exact nominal bitrate, no errors anywhere — and the hi-fi emits a faint
+low-frequency rumble at best.
+
+Two stacked renderer bugs found in the Pi player's decode sink (`alsaplay`, ~100 lines
+of C that owns the ALSA device):
+
+1. **WAV chunk parser used `fseek` on stdin** — a pipe is not seekable, so the seek
+   silently no-ops, and the parser had already eaten the `fmt ` chunk id (it read
+   `WAVE` as a chunk *with* a size). Result: it crawled through the stream forever,
+   never opened ALSA. Logs look perfect; not a single byte of audio ever reaches the
+   device. Fix: pipe-safe parse — `WAVE` is a bare marker (no size field), and
+   oversized chunks are drained with reads, not seeks.
+2. **It requested S16/S24 against the Flex's S32-only interface** (see the USB
+   constraints section in daemon.md) — after fixing the parser, `snd_pcm_hw_params`
+   still EINVAL'd. Fix: always open S32_LE and shift 16/24-bit samples into the MSBs,
+   plus mono→stereo upmix (the interface rejects 1-channel too).
+
+Debugging technique that cracked it: pipe a known WAV through the binary against the
+`null` ALSA device (silent), and strace the live pair — the moment you see the
+consumer reading steadily while the DAC never opens, suspect the decoder's header
+parse. Verified on the real device with 16/24-bit, mono/stereo before deploy.
