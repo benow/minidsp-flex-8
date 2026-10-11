@@ -72,6 +72,8 @@ control client alongside `minidspd`.
 | [docs/nastv-boundary.md](docs/nastv-boundary.md) | The NASTV ↔ HA ↔ Flex control-plane boundary: the three wires, which automations serve which NASTV task, the W4 plugin-trigger roadmap |
 | [docs/playback-pipeline.md](docs/playback-pipeline.md) | Music playback end-to-end: the chain hop by hop, the diagnostic ladder, ALSA ground-truth commands, logging/retention, known failure modes |
 | [scripts/e2e-music-probe.sh](scripts/e2e-music-probe.sh) | The playback effectiveness gate: album → push → attach → ALSA flowing → Flex, N consecutive passes |
+| [docs/display-correlation.md](docs/display-correlation.md) | Display ↔ audio correlation: the now-playing chain, the permutation sweep, the divergences found (currentTrackId never written, pause lie, clear divergence, stale queue snapshot) and their fixes |
+| [scripts/display-correlation-sweep.py](scripts/display-correlation-sweep.py) | The correlation sweep: 14 queue permutations asserted against the audio truth |
 | [docs/rotel.md](docs/rotel.md) | The Rotel power amp (RS-232 via the HA box): surviving shell_command inventory, what the Flex takeover made obsolete |
 | [docs/troubleshooting.md](docs/troubleshooting.md) | The daemon's `EmptyPacket` control-loop death (Bluetooth-triggered), the watchdog, REST sensor semantics |
 | [docs/manual-notes.md](docs/manual-notes.md) | Front-panel gestures, presets, inputs — the manual distilled, with the full text one click away |
