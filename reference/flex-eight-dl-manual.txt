@@ -1,0 +1,3551 @@
+
+Print or save - miniDSP Flex Eight / Eight-N (DL) User Manual
+          Skip to content
+            miniDSP Flex Eight / Eight-N (DL) User Manual
+              Print or save
+            Initializing search
+Up to all manuals
+    miniDSP Flex Eight / Eight-N (DL) User Manual
+    Introduction
+    Software Installation
+    Basic Operation
+    miniDSP Device Console
+    Signal Flow
+    DSP Reference
+    Dirac Live
+    AutoEQ
+    Additional Information
+    Print or save
+    Print or save
+        On this page:
+      Introduction
+      Software Installation
+      Basic Operation
+      Front and rear panels
+      Power and control
+      Playing audio
+      USB audio
+      Bluetooth audio
+      Dante audio
+      Remote control
+      miniDSP Device Console
+      Signal Flow
+      Overview
+      Input channels
+      Signal routing
+      Output channels
+      DSP Reference
+      Overview
+      Parametric EQ
+      Crossover
+      Compressor
+      On Inter-Sample Peaks
+      Dirac Live
+      Prerequisites
+      First steps
+      Configure Dirac Live
+      Take your measurements
+      Filter design
+      Filter export
+      AutoEQ
+      Overview
+      Installation and activation
+      First steps
+      Measure
+      Measure and EQ
+      Apply the EQ
+      Tips and guidelines
+      Additional Information
+      IMPORTANT INFORMATION
+      Troubleshooting
+      Obtaining support
+        On this page:
+      Introduction
+      Software Installation
+      Basic Operation
+      Front and rear panels
+      Power and control
+      Playing audio
+      USB audio
+      Bluetooth audio
+      Dante audio
+      Remote control
+      miniDSP Device Console
+      Signal Flow
+      Overview
+      Input channels
+      Signal routing
+      Output channels
+      DSP Reference
+      Overview
+      Parametric EQ
+      Crossover
+      Compressor
+      On Inter-Sample Peaks
+      Dirac Live
+      Prerequisites
+      First steps
+      Configure Dirac Live
+      Take your measurements
+      Filter design
+      Filter export
+      AutoEQ
+      Overview
+      Installation and activation
+      First steps
+      Measure
+      Measure and EQ
+      Apply the EQ
+      Tips and guidelines
+      Additional Information
+      IMPORTANT INFORMATION
+      Troubleshooting
+      Obtaining support
+Flex Eight / Eight-N (DL)
+¶
+Product Overview
+¶
+The 
+miniDSP Flex Eight (DL)
+ and 
+miniDSP Flex Eight-N (DL)
+ are compact stereo-input, 8-channel
+output high-resolution audio processors featuring
+Dirac Live®, the world’s premier room correction solution.
+Each has SPDIF and optical digital inputs, USB audio and high-quality
+Bluetooth audio with LDAC™ and aptX™ HD codecs.
+In addition to Dirac Live, the Flex Eight includes our powerful audio
+processing functionality on each output channel. 
+With eight outputs available, the flexible input-output
+routing matrix enables a wide range of audio processing applications ranging
+from simple stereo playback through subwoofer integration to advanced configurations of active
+speakers combined with multi-sub control, all enhanced by stereo Dirac Live® room
+correction in a single compact unit.
+In keeping with the "Flex" family name, the miniDSP Flex Eight (DL) is available in both
+analog-output and digital-output variants. The digital-output variant uses Dante®
+technology for low-latency transmission of eight uncompressed digital output
+channels over Ethernet.
+The Flex Eight is configured using our comprehensive control program,
+miniDSP Device Console, which runs on Windows and macOS, and the
+Dirac Live calibration program from Dirac Research.
+Audiophile-grade distortion and noise performance and a front panel OLED display
+and encoder for easy user control round out this compact, affordable
+package.
+Note
+DISCLAIMER/WARNING
+¶
+miniDSP cannot be held responsible for any damage that may result from the improper use or incorrect configuration of this product. Please read this manual carefully to ensure that you fully understand how to operate and use this product, as incorrect use or use beyond the parameters and ways recommended in this manual have the potential to cause damage to your audio system.
+Please also note that many of the questions we receive at the technical support department are already answered in this User Manual and in the online application notes on the miniDSP.com website. So please take the time to carefully read this user manual and the online technical documentation. And if an issue arises with your unit, please read through the Troubleshooting section first. Thank you for your understanding!
+WARRANTY TERMS
+¶
+miniDSP Ltd warrants this product to be free from defects in materials and workmanship for a period of one year from the invoice date. Our warranty does not cover failure of the product due to incorrect connection or installation, improper or undocumented use, unauthorized servicing, modification or alteration of the unit in any way, or any usage outside of that recommended in this manual. If in doubt, contact miniDSP prior to use.
+Flex Eight variants
+¶
+There are two variants of the 2-in 8-out miniDSP Flex Eight (DL) with different output hardware:
+the standard analog-only variant, and the digital-analog hybrid using Dante® technology.
+The variant is selected with the "Dante AoIP Option" option when
+ordering
+.
+The two hardware variants of the miniDSP Flex Eight (DL) (click for larger)
+In this manual, "Flex Eight" generally refers to both variants.
+If not, it will be clear from context which variant is being discussed, or
+specifically stated so.
+Typical applications
+¶
+The miniDSP Flex Eight (DL) is ideal for active speakers, up to stereo
+four-way. Any outputs
+that are not used for the speaker can be used for independent subwoofers.
+Active three-way speaker plus sub
+¶
+Figure 1 shows the miniDSP Flex Eight (DL) used as
+an active crossover with a subwoofer integrated and stereo (two-channel) Dirac Live room correction. With multiple digital inputs
+including Bluetooth audio streaming, this is a very
+cost-effective way to build a modern active speaker system.
+Figure 1. miniDSP Flex Eight (DL) active speaker system with subwoofer integration  and stereo (two-channel) Dirac Live room correction
+Passive speakers and multiple subwoofers
+¶
+The Flex Eight doesn't have to be used for active speakers!
+Figure 2 illustrates a system using regular passive speakers, that takes advantage of the number of
+available outputs to integrate four subwoofers.
+Figure 2. miniDSP Flex Eight (DL) controlling four subwoofers as well as a pair of speakers 
+With this many subwoofers, a simple approach to integrate is to just time-align all subwoofers and speakers
+based on their distance to the listening position. More sophisticated approaches take advantage
+of the DSP power built into the Flex Eight – see the app note 
+Tuning multiple subwoofers with miniDSP
+ for an introduction.
+Dante integration (Flex Eight-N)
+¶
+The miniDSP Flex Eight-N (DL) is easy to integrate into any existing Dante Audio-over-IP network.
+It incorporates a Dante Brooklyn 3™ module, ensuring wide compatibility with all
+Dante endpoints.
+The Flex Eight-N is suitable for a range of applications, such as active speakers using
+Dante-enabled multichannel amplifiers, and stereo distribution to Dante-enabled speakers, allowing individual PEQ, gain, and delay on each speaker.
+Figure 3. miniDSP Flex Eight-N (DL) in a Dante application 
+Additional resources
+:
+Catalog of Dante-enabled products
+Dante software
+Dirac Live room correction
+¶
+The miniDSP Flex Eight (with Dirac Live) executes stereo (two-channel)  Dirac Live® digital room correction,
+from 
+Dirac Research
+. Dirac Live's mixed-phase
+filtering technology will improve the imaging of your system, minimize
+the effects of room modes and resonances, and improve dynamics and
+clarity.
+To accomplish this, the 
+Dirac Live
+software steps you through the procedure for taking measurements around
+your listening area. It employs a sophisticated analysis algorithm to
+make the optimal correction across the 
+whole
+ listening area, not just
+at a single point. You have full control over the target frequency
+response. Measurements are taken with the miniDSP UMIK-1 or UMIK-2
+calibrated acoustic measurement microphone.
+In addition to correcting magnitude
+response, Dirac Live® corrects the system's 
+impulse response
+, which
+reflects how the system responds to a sharp transient such as a
+drumbeat. Reflections, diffraction, resonances, misaligned drivers, and
+so on, all combine to smear out the transient. Impulse response
+correction is a critical factor for accurate sound-staging, clarity and
+bass reproduction.
+Specifications
+¶
+The full specifications are available in the datasheets at the following links:
+miniDSP Flex Eight datasheet
+miniDSP Flex Eight-N datasheet
+Software Installation
+¶
+The miniDSP Flex Eight (DL) is
+configured with software running on a PC
+or Mac.
+System requirements
+¶
+Windows
+¶
+Windows 10 or later, with all updates installed
+At least a dual core Intel i5 processor or better, or AMD equivalent (ARM processors are not supported)
+At least 8 GB RAM
+Two free USB 2.0 ports
+Internet connection
+Info
+Note that Windows running on ARM processors is not supported.
+macOS
+¶
+macOS:
+For Dirac Live: macOS 11 Big Sur or later, latest version with all updates
+For miniDSP Device Console: macOS 10.12 Sierra or later
+At least a dual core Intel i5 processor or better, or an Apple ARM (M-series) processor
+At least 8 GB RAM
+Two free USB 2.0 ports
+Internet connection
+Info
+Intel and Apple ARM processors are supported with separate binaries for miniDSP Device Console.
+Download the miniDSP software
+¶
+If you purchased your Flex Eight directly from miniDSP's website
+¶
+Log in to your account on 
+minidsp.com
+. (Note: this must be the same account as you used when you purchased the Flex Eight.)
+Go to User Downloads. The User Downloads link is visible from
+the drop-down menu at the top right of the website:
+If you purchased your Flex Eight from a dealer
+¶
+If you purchased your Flex Eight from a miniDSP dealer, you will have received a coupon together with the product.
+Follow the steps below:
+If you already have an account on the minidsp.com website, log in here:
+https://www.minidsp.com/log-in-register
+If you do not have an account on the minidsp.com website yet, create one here:
+https://www.minidsp.com/log-in-register?view=registration
+Go to the Redeem Coupon page:
+https://www.minidsp.com/support/redeem-coupon
+Select the Plugin Group 
+Flex EIGHT
+ from the dropdown menu and enter your coupon's code. Click the
+Validate
+ button.
+Go to User Downloads. The User Downloads link is visible from
+the drop-down menu at the top right of the website:
+Download the software package
+¶
+In the User Downloads section:
+Navigate to the 
+Flex EIGHT Series
+ section.
+You will see a page that includes a list of three download links. There is also a 
+Download
+ button:
+To download the Windows version, click on the 
+Windows 10/11 Build
+ link, or on the purple 
+Download
+ button.
+To download a macOS version, click on either the 
+Mac-Apple M series Build
+ link or the 
+Mac-Intel Build
+ link, according to the type of processor in your computer.
+Install the miniDSP software
+¶
+Install on macOS
+¶
+Double-click on the downloaded 
+miniDSP Device Console-x.y.z.dmg
+ (Intel version) or
+miniDSP Device Console-x.y.z-arm64.dmg
+ (ARM version) image file to open it.
+(The version number 
+x.y.z
+ embedded in the file name will change over time.)
+Drag the miniDSP Device Console application icon to your Applications folder.
+ To run Device Console, locate it in the Applications folder
+and double-click on it. To make it easier to run in future,
+right-click on its dock icon and select Options -> Keep in Dock.
+The first time you run Device Console on macOS Sequoia or later, you will see the following security warning:
+Click on 
+Allow
+. If you do not get this warning, or you click 
+Don't Allow
+ by mistake, you can change this in the System Settings. See 
+Network access errors
+ on the Troubleshooting page.
+Info
+The macOS version of miniDSP Device Console is installed for all users on the computer.
+Install on Windows
+¶
+ Double-click on the downloaded
+MiniDSP Device Console Setup x.y.z.exe
+ installer to run it. (The version number 
+x.y.z
+ embedded in
+  the file name will change over time.)
+Install the miniDSP UAC2 USB Audio driver:
+Start miniDSP Device Console.
+Navigate to the Settings screen and select 
+Install USB Audio Driver
+:
+Device Console will confirm that you want to install the driver.
+Click on the 
+PROCEED
+ button.
+Note: we recommend that you accept the default installation location.
+The first time you run
+Device Console and the Dirac Live application, you may see a
+Windows Firewall warning such as the one below. Ensure that "Private
+networks..." is checked and "Public networks..." is not checked. Then
+click on "Allow access." This warning dialog may appear more than once.
+Info
+The most recent miniDSP processors require the UAC2 driver to be at least version 5.40. If you have
+difficulty with the UAC2 driver or control panel, use 
+Install USB Audio Driver
+ to
+install the latest version.
+Info
+The Windows installation of miniDSP Device Console is for a single user. If it needs to be run in more than one account
+on your PC, it will need to be installed for each account.
+Download and install Dirac Live
+¶
+Download the 
+Dirac Live
+ application for your platform from the
+Dirac Research download page
+.
+On macOS, double-click on the diraclive-latest.zip
+download if your browser did not unzip it.
+Double-click on the downloaded installer to run it. It will be named
+diraclive-latest.exe
+ on Windows and 
+DiracLive v3.x.y Setup Darwin
+ on macOS (the version number 
+x.y
+will change as updates are issued). We strongly recommend that you accept the default
+installation settings.
+Do not run the application from the installer, as it must be started with the 
+Start Calibration
+ button in Device Console.
+                            Basic Operation 
+↵
+Front and rear panels
+¶
+The miniDSP Flex Eight (DL) is a sophisticated device with a range of audio applications.
+This section of the manual explains operation of the Flex Eight in its default
+configuration. Once you are familiar with its basic usage, read the following sections
+of this manual to learn how to set up more advanced configurations with miniDSP Device Console.
+Once your configuration is complete, you can run Dirac Live
+to optimize the whole system for your room. 
+Front panel
+¶
+The front panel and rotary encoder provide access to the key features of the
+miniDSP Flex Eight (DL). These can also be accessed with a remote control.
+Volume
+To change the volume, rotate the encoder. The volume changes in
+0.5 dB steps. Minimum volume is -127.5 dB and maximum volume is 0.0
+dB.
+Preset
+To select one of the four presets, press the encoder knob once, then
+rotate until the desired preset number is displayed. Either press
+the encoder knob again or wait for a second. The display will show "Pls
+wait..." while the new preset is being loaded, and then return
+to normal.
+Audio source
+To select an audio source, press the encoder knob twice, then rotate
+the encoder until the desired input source is displayed. Either press the
+encoder knob or wait for a second and the display will
+return to normal with the new input selected.
+Dirac Live enable/disable
+To turn Dirac Live filtering on and
+off, press the encoder knob three times, then
+rotate the encoder knob until the desired selection
+(on or off) is displayed. Either press the encoder knob or wait for a
+second and the display will return to normal with the Dirac Live
+status:
+Mute
+To mute output, press and hold the
+encoder knob. When the display changes to show "Mute?," release the
+knob. To unmute, repeat this procedure.
+Standby
+To put the Flex Eight into standby, press and hold the encoder
+knob. When the display changes to show "Standby?," release the knob.
+To take it out of standby, press the encoder knob.
+Rear panel
+¶
+Warning
+Ensure all equipment is powered off when making audio connections.
+Both versions
+¶
+DC power
+. The supplied 12 VDC
+    power supply includes a set of interchangeable power pins for USA,
+    UK, Europe and Australia. Fit the correct pins for your country.
+    Connect the DC plug to the 12 VDC power socket.
+Ground lug
+. This can be connected to an external electrical
+    ground if it is necessary to ground the chassis of the Flex Eight. This
+    need is uncommon, and most of the time it can be left unconnected.
+USB port
+. Used for both configuration/control and audio streaming. Connect to an
+    available USB port on your computer. This port can also be connected
+    to a network streamer with USB output for audio playback.
+Bluetooth antenna
+. Screw on the supplied Bluetooth antenna here.
+Optical digital input
+. Connect a stereo digital source using a TOSLINK
+    optical cable. Sample rates from 32 up to 216 kHz are supported.
+Coax digital input
+. Connect a stereo digital source using an RCA cable.
+    Sample rates from 32 up to 216 kHz are supported.
+Reset button
+. For use in specific circumstances only.
+    See the 
+Troubleshooting
+ section.
+Flex Eight
+¶
+Analog outputs
+. Connect equipment such as power amplifiers and
+    subwoofers using RCA cables. Ensure that your connections match the routing
+    and crossovers that you have set up internally. The maximum output voltage is 2.0 Vrms.
+Flex Eight-N
+¶
+Analog outputs
+. Output channels 1–4 are provided here.
+    Connect equipment such as power amplifiers and
+    subwoofers using RCA cables. Ensure that your connections match the routing
+    and crossovers that you have set up internally. The maximum output voltage is 2.0 Vrms.
+Dante digital output
+. Output channels 1–8 are provided over
+    Ethernet. Connect the Ethernet port to your network and use standard tools such as
+    Dante Controller to route the eight output channels to Dante sinks.
+Info
+If using both analog and digital outputs, note that there is a slight
+additional latency on the Dante outputs, of approximately 1.5 ms.
+Power and control
+¶
+This page describes how to connect the miniDSP Flex Eight (DL) to power, and the connections
+needed to configure it using Device Console and Dirac Live.
+Power
+¶
+The supplied 12 VDC power supply includes a set of interchangeable power pins (for USA, UK, Europe and
+Australia). Fit the correct pins for your country. Connect the DC plug to the 12 VDC power socket.
+Apply power to the Flex Eight only after all input and output connections have been made.
+When not in use, the Flex Eight can be placed into standby
+mode with the remote control or front panel.  When applying or removing power, the following sequence is
+recommended:
+On
+: Power on line-level equipment, including the Flex Eight, then turn on power amplification.
+Off
+: Turn power amplification off, then power off line-level equipment, including the Flex Eight.
+Configuration over USB
+¶
+The USB port is used to configure the Flex Eight with
+Device Console and Dirac Live. Usually, this is connected directly:
+use the supplied cable to connect a free USB 2.0
+port of your computer to the USB port (Type-B) on the Flex Eight
+rear panel.
+If longer cable lengths are required, an active USB extension cable can be used.
+Info
+Note that the Flex Eight
+can 
+not
+ be configured using Bluetooth – Bluetooth is for audio streaming 
+only
+.
+Note for macOS users
+¶
+The first time the Flex Eight is connected to the computer over USB, you will need to approve
+the connection. A dialog such as the following will appear. 
+Click on "Allow".
+Configuration over the network (Device Console only)
+¶
+For configuration using Device Console, an optional
+miniDSP Wi-DG
+Wi-Fi to USB bridge can be used. This enables configuration over the Wi-Fi network, without the USB cable.
+The figure below shows a typical connection example.
+Info
+Configuration via a Wi-DG works with Device Console 
+only
+. It does not work with Dirac Live.
+For Dirac Live, a wired USB connection is 
+required
+.
+Playing Audio
+¶
+The miniDSP Flex Eight (DL) has a range of input sources and output connections.
+This page provides an overview so you can
+quickly get started with playing audio.
+Warning
+Ensure all equipment is powered off when making audio connections.
+Connecting sources
+¶
+The diagram below illustrates the audio sources that can be connected to the
+miniDSP Flex Eight (DL). 
+Connecting audio sources to the miniDSP Flex Eight (DL) (click for larger)
+Connecting an amplifier and speakers
+¶
+The diagram below illustrates connection of a power amplifier and a
+pair of speakers to the Flex Eight. The default settings
+of the Flex Eight route input channels 1 and  2 to
+output channels 1 and  2 with no crossovers active, so no further configuration
+is needed for this simple usage of the Flex Eight.
+Connecting a stereo amplifier and speakers to the miniDSP Flex Eight (DL)
+Warning
+Before playing audio for the first time, turn the volume down using the front panel encoder.
+Increase it gradually after audio playback starts.
+Advanced configuration
+¶
+The miniDSP Flex Eight (DL) is a flexible and powerful device that allows much more sophisticated
+system configurations. For example, a common application is as the heart of 
+an accurate active speaker. The connections for a three-way active
+speaker are shown here: 
+Connecting the miniDSP Flex Eight (DL) for a three-way active speaker
+Other configurations combining active speakers (up to stereo four-way) and subwoofers (up to the 
+number of available output channels) are easily achievable with the Flex Eight.
+To use the Flex Eight in these more advanced configurations, you will need to
+use miniDSP Device Console to set up its audio processing. We recommend that you take the time to
+read through the remaining
+sections of this manual and familiarize yourself with its capabilities.
+In particular, see the 
+Routing examples
+ section to find an example
+that is close to your desired application and for links to tutorial-style application notes.
+Bluetooth audio
+¶
+This content has moved to 
+Bluetooth audio
+.
+About USB Audio
+¶
+This content has moved to 
+USB audio
+.
+USB Audio
+¶
+About USB Audio
+¶
+The miniDSP Flex Eight (DL) accepts stereo PCM audio over USB at sample rates up to 192 kHz.
+The same USB connector is used
+for playing USB Audio as well as for configuration and Dirac Live
+calibration.
+To play USB Audio from a computer, use the
+supplied cable to connect the USB 2.0 (Type B) port of the Flex Eight
+to a free USB port on your computer.
+Alternatively, connect a network streamer to the USB port. For an
+example using the Raspberry Pi, see this application note on our
+website:
+Streaming to a miniDSP 2x4HD or DDRC-24 with a Raspberry Pi
+    3A+
+Note
+While some miniDSP processors provide the processed outputs 
+to
+ the computer over USB, the
+Flex Eight does not. 
+macOS
+¶
+The miniDSP Flex Eight (DL) is USB Audio compliant, so no drivers need to be installed to play audio on macOS.
+Open 
+Audio MIDI Setup
+ (in 
+Applications
+->
+Utilities
+) and
+click on its name in the list on the left-hand side. 
+Set sample rate
+¶
+Click on the selector next to 
+Format
+ to bring up the sample rate
+and bit depth selector. Sample
+rates up to 192 kHz can be selected:
+Default audio device
+¶
+To set the Flex Eight as the default audio output device, right-click
+and select "Use this device for sound output":
+Note that individual audio playback apps may allow the Flex Eight to
+be selected for audio output independently of the system default. They
+may also control sample rate automatically.
+Windows 11
+¶
+Note: to play USB audio from Windows, the miniDSP UAC2 driver package
+must be installed first.
+Default audio device
+¶
+To set the miniDSP Flex Eight (DL) as the default
+audio output device, open the Settings app and navigate to the
+System → Sound page. Select the Flex Eight with the radio button:
+Set sample rate
+¶
+To change the bit depth and sample rate,
+click on the rightward angle symbol 
+>
+. Click the selector next to 
+Format
+ to pop up the sample
+rate menu. Sample rates
+up to 192 kHz can be selected:
+ASIO
+¶
+If your audio application supports ASIO®
+audio drivers, we recommend selecting the miniDSP ASIO Driver in its
+settings. This typically allows the application to automatically change
+sample rate. For example, in JRiver Media Center:
+miniDSP UAC2 control panel
+¶
+The current settings of the miniDSP Flex Eight (DL) can be viewed by opening the
+miniDSP UAC2 Control Panel
+ from the Windows Start menu (under the
+miniDSP Ltd
+ folder). This control panel allows you to view current
+settings. In addition, it can be used to set buffer size, although we
+recommend that you leave this setting at the default. If you are having
+an issue with inadequate output volume over USB playback, check the
+Volume tab.
+To see the installed version of the UAC2 driver, use the About tab:
+Bluetooth Audio
+¶
+About Bluetooth audio
+¶
+The miniDSP Flex Eight (DL) includes the
+LDAC
+™ and aptX™ HD Bluetooth
+codecs for high-fidelity Bluetooth™ audio.
+Note that Bluetooth is for audio streaming 
+only
+. Configuration with Device Console
+or Dirac Live can only be done with a USB connection.
+Info
+LDAC is an audio coding technology developed by Sony that enables the
+transmission of High-Resolution (Hi-Res) Audio content, even over a
+Bluetooth connection. Unlike other Bluetooth compatible coding
+technologies such as SBC, it operates without any down-conversion of the
+Hi-Res Audio content, and allows approximately three times more
+data than those other technologies to be transmitted over a
+Bluetooth wireless network with unprecedented sound quality, by means of
+efficient coding and optimized packetization.
+LDAC is supported on recent Android devices. If your device does not
+support LDAC, you can still pair it with the miniDSP Flex Eight (DL), but Bluetooth audio
+will use a lower bitrate codec.
+aptX™ HD is designed to deliver high definition (HD) audio over
+Bluetooth, to help you get the very most from your music.
+Bluetooth pairing
+¶
+Pairing your mobile device with the miniDSP Flex Eight (DL) is essentially the same
+as pairing it with other Bluetooth audio devices such as headphones or
+your car.
+To put the Flex Eight into pairing mode:
+Press the encoder button on the Flex Eight twice and rotate it until the
+    display shows "Bluetooth."
+While the display still says "Bluetooth," press and hold the encoder until
+    the display changes to "BTPairing."
+Release the encoder button. The Flex Eight is now in pairing mode. The
+    input source on the front panel will display "BT(P)" to indicate pairing mode.
+Open the Bluetooth Settings on your mobile device to
+    pair with the Flex Eight. The exact appearance will vary depending on your
+    specific device, but this series of screenshots illustrates a
+    typical sequence:
+If your device supports LDAC, enable it in your device settings (the gear icon in our example above):
+When Bluetooth audio is selected as the source, the front panel
+will display the input source as one of:
+BT(C)
+The Flex Eight is paired over Bluetooth.
+BT(NC)
+No Bluetooth device is paired.
+BT(P)
+The Flex Eight is in pairing mode.
+Playing audio
+¶
+Using the front panel or remote control, select the Bluetooth input. The front panel will
+display "BT(C)". Then start audio playback on your mobile device.
+Info
+The volume control on your mobile device does not directly control volume on
+the Flex Eight.
+Dante Audio
+¶
+The miniDSP Flex Eight-N (DL) incorporates a Dante Brooklyn 3™ module, ensuring wide compatibility with all
+Dante devices.
+The following two screenshots illustrate the Dante capabilities of the Flex Eight-N.
+Device info for miniDSP Flex Eight-N (DL) in Dante Controller (click for larger)
+Device Config for miniDSP Flex Eight-N (DL) in Dante Controller (click for larger)
+Routing of the eight output channels is accomplished with the Dante Controller software.
+Example Dante routing of miniDSP Flex Eight-N (DL) (click for larger)
+Remote control
+¶
+The miniDSP Flex Eight (DL) has the following options for remote control of key runtime
+functions.
+Using the miniDSP remote
+¶
+The infrared remote control provided with the Flex Eight controls all
+key runtime functions.
+Standby
+Put the Flex Eight into standby and take it out again.
+Mute
+Mute and unmute audio output.
+Volume
+Reduce or increase the volume. Each
+press changes the volume by 0.5 dB. Holding down a button will
+accelerate volume change to 3 dB steps.
+Media control
+Have no effect
+with the Flex Eight.
+Dirac Live
+Enable or disable Dirac Live filtering. Dirac Live filtering will be effective
+only on presets for which Dirac Live filters have been loaded.
+Source selection
+Cycle through the available input sources in order: TOSLINK, SPDIF (coax), USB, Bluetooth.
+Preset (1 through 4)
+Switch to the selected preset. It will take a few seconds for the
+preset selection to complete while the processor loads the new filters from
+its flash memory into the DSP.
+Using the miniDSP KD-1
+¶
+The miniDSP KD-1 is a "smart" control device with a large physical knob
+for control of key functions of the miniDSP Flex Eight (DL). 
+The KD-1 operates with the
+Flex Eight using BLE (Bluetooth Low Energy).
+ Controlled features are:
+Volume
+Mute
+Input selection
+Preset selection
+Dirac Live on/off
+For more information, see the 
+KD-1 manual
+.
+Info
+Using the KD-1 with the miniDSP Flex Eight (DL) 
+may
+ require a firmware update. See
+Upgrading the Flex Bluetooth firmware
+in the KD-1 manual for more information.
+Using a third-party programmable remote
+¶
+A third-party programmable remote can be used with the miniDSP Flex Eight (DL). See
+this page on our support site for the codes to use:
+https://support.minidsp.com/support/solutions/articles/47001142421-ir-codes-for-amx-crestron-control-systems
+Programming a Logitech Harmony remote
+¶
+The miniDSP Flex Eight (DL) can be used with a Logitech®️ Harmony®️ remote. The
+same functions as the stock remote are programmed into the Harmony
+database. In addition, you can set up buttons for direct input source
+selection (instead of cycling through input sources).
+The procedure is as described in the application note linked below,
+except that you should select "minidsp flex" as the device instead of
+"shd".
+Using a Harmony Remote with the
+    miniDSP
+    SHD
+Info
+Logitech
+ and 
+Harmony
+ are registered trademarks of
+Logitech.
+Android/iOS control app
+¶
+With the addition of a 
+miniDSP
+Wi-DG
+ Wi-Fi to USB
+bridge, the miniDSP Flex Eight (DL) can be remote-controlled from a phone or tablet
+running Android or iOS (iPhone/iPad).
+For more information, see this application note:
+Using Android / IoS app to control your
+    miniDSP
+If you're keen to just get started, here are the direct links to the
+app:
+Android version on Google Play
+    store
+iOS version on iTunes
+    store
+Note that currently the miniDSP Control App cannot be used over the
+Bluetooth connection. It will work only if a Wi-DG is connected to the
+USB port of the Flex Eight.
+Warning
+If the USB port is being used for iOS/Android app control via the Wi-DG,
+it cannot be used for USB Audio streaming.
+Ended: Basic Operation
+miniDSP Device Console¶
+¶
+The miniDSP Device Console ("DC") is the new configuration and control
+software for miniDSP audio processors. It replaces the earlier "plugin" control
+software. In contrast to the earlier software, Device Console provides:
+A single software program to control all miniDSP processors
+Over-the-air (OTA) self-updates
+Detection and installation of firmware upgrades for your processor
+Tip
+Configuration of the miniDSP Flex Eight (DL) with Device Console requires
+a USB connection.  Configuration can not be done using
+Bluetooth.
+A Wi-DG connected to the USB port of the Flex Eight can, however, be used to
+provide a Wi-Fi to USB bridge compatible with Device Console (but not with Dirac Live). See
+Configuration over the network
+ and the 
+Wi-DG User Manual
+ (PDF).
+Working with devices
+¶
+Finding connected devices
+¶
+The 
+Discover Devices
+ screen displays devices connected to your computer, or which have a network-accessible
+control interface.
+Info
+If a device appears with an asterisk next to its name, such as in the example below,
+it means that there is a feature upgrade
+available for it that has not yet been installed. When you connect to it, Device Console will
+require that you perform an upgrade and walk you through the necessary steps.
+(For more information
+prior to connecting and performing the upgrade, refer to the Device Console version history and the miniDSP
+forum announcements
+.)
+Finding network-connected devices
+¶
+The miniDSP Flex Eight (DL) can be controlled by miniDSP Device Console over the network by using a
+miniDSP Wi-DG
+ network to USB bridge.
+Info
+Note that network control is for miniDSP Device Console
+only – Dirac Live calibration can 
+not
+ be performed
+over the network.
+If you have a Wi-DG on your network and connected to a Flex Eight, it should appear in the
+list of connected devices. If not, confirm that you have
+updated the firmware on your Wi-DG to the latest version. In particular, the Flex Eight requires that the Wi-DG be on
+firmware 
+0.9.5
+ or higher.
+You can also connect to a device by manually entering the IP address of the Wi-DG (IPv4 only). To do so, click on the blue
+"+" button at the lower right of the window, enter the address and click 
+Connect
+:
+Connecting to a device
+¶
+To connect
+to a device for editing and control, click on its name. DC will update to display the
+device-specific sidebar on the left and the signal processing control interface in the main area on the right.
+The signal processing area is divided into sections for the input channels and output channels.
+There is a control strip for each channel. The output channel strips also contain the
+signal routing matrix.
+Info
+If your device has any pending upgrades, such as new firmware or features, Device Console will now
+prompt you to perform the upgrade. There may be several steps involved, so please be patient and
+follow the instructions.
+When you are done, click DISCONNECT.
+Expanding the view
+¶
+To hide the left sidebar and make the main signal processing controls larger, click on the
+Expand button at the lower right of the window:
+The sidebar disappears and the main controls expand to fill the available space. The
+master volume control is still accessible in a bar at the bottom of the window:
+To restore the sidebar, click on the close button at the lower right:
+Using template devices
+¶
+The 
+Template Devices
+ screen displays the complete list of devices supported by Device Console.
+This can be used to explore features of a processor that you do not have, or to edit your processor
+settings when you are not able to connect to it.
+Info
+If a template device appears with an asterisk next to its name,
+it means that there is a feature upgrade
+available for it that has not yet been installed. When you click on it, Device Console will
+perform any necessary update to the template files.
+To edit a template device, click on it.
+A template device "mirrors" the real device, so that you can edit your settings
+while not connected. That is, while you are editing the real device, the
+current preset is copied to the corresponding template device whenever you change presets
+and when you disconnect. You can then edit those
+settings in the template device.
+Tip
+While editing a template device, the level meters will display a "dummy" signal.
+To turn off the level meters while editing a template device, click the Mute button in the left sidebar.
+Note that not all features will be visible when editing a template device, and not all visible features
+will function. For example, you cannot purchase a Dirac Live upgrade in a template device, as you must
+be connected to the actual physical device that the upgrade is for.
+When you are done editing in the template device, click FINISH.
+When you connect to your real device again, Device Console detects that you have edited
+the template and asks you if you want to use the settings from the edited template.
+Or, you can discard the changes you made in the template and revert to the
+settings that your device had the last time you were connected to it. This is done on a 
+preset-by-preset basis:
+Info
+You will see a similar dialog if you edit the settings of your device using a
+different computer or the older "plugin" user interface (the latter is not recommended
+once you have migrated to the miniDSP Device Console).
+Info
+If you have more than one
+device of the same type, only one of them can be edited using the
+template device.
+If you have more than one device of the same type or
+need to edit your devices from more than one computer, you will need to
+manage your presets by exporting them to and importing them from files.
+See 
+Importing and Exporting
+.
+Controlling a device
+¶
+The following sections apply when Device Console is connected to a processor,
+or when editing a template device.
+Volume and mute
+¶
+To change the volume from within Device Console, drag or click on
+the slider:
+The volume can also be changed in 0.5 dB increments by clicking the blue "+" and "-" buttons to the left
+of the slider.
+To mute the Flex Eight, press the mute button:
+Tip
+While the cursor is over the volume slider, use the mouse scroll wheel to adjust volume.
+Using Dirac Live
+¶
+Info
+This section applies only if Dirac Live is activated on your Flex Eight. If it is not,
+you will see an option here to purchase an upgrade instead of the 
+Start Calibration
+ and 
+Dirac On/Off
+ buttons.
+Info
+The miniDSP Flex Eight (DL) implements 
+stereo
+ Dirac Live correction. That is, there
+are two channels of Dirac Live correction. After stereo Dirac Live correction, the
+audio signal is routed to the eight output channels for processing such
+as parametric EQ and crossovers.
+To start Dirac Live calibration, click on the START CALIBRATION button. The Device Console will disconnect
+and the Dirac Live application will start.
+Dirac Live room
+correction can be turned on and off with the DIRAC ON/DIRAC OFF button. The front panel knob
+and the  remote control can also be used to turn Dirac Live  on and off.
+Tip
+Be sure to start the Dirac Live
+application from within the Device Console using the 
+START CALIBRATION
+ button.
+If you open the Dirac Live application directly from your operating system, it
+will not be able to detect the Flex Eight.
+Info
+Dirac Live calibration 
+can not
+ be performed
+over the network, so the START CALIBRATION button will be visible only if the Flex Eight is connected
+to the computer by USB.
+Input sources
+¶
+Select input source
+¶
+To select the input source, drop down the selector menu and select the desired input:
+Info
+The input source can also be selected
+ from the front panel or  with a remote control.
+Audio source configuration
+¶
+Click on the CUSTOMIZE SELECTION button to open the Audio Source Configuration window:
+Enabling and disabling audio sources
+¶
+Each input
+source can be enabled or disabled by clicking on the button in the Enable column. This is a
+convenience feature so that unused inputs do not have to
+be cycled through when using the front panel or remote control.
+Info
+The currently-selected input is greyed out and cannot be disabled.
+Input volume offset
+¶
+Each input source also has a volume offset, ranging from -12 to +12 dB. The volume offset is applied as
+the very first step of digital processing in the miniDSP Flex Eight (DL). This feature can be used to:
+Match volume levels from different sources. For example, analog sources often have a lower average level
+than digital sources. Adding a positive volume offset can reduce the need to change
+master volume when switching sources.
+Address the phenomenon of "inter-sample peaks" on certain digital sources by reducing the digital signal
+level. For more information, see the page 
+On inter-sample peaks
+.
+Note that the volume offset is not stored in presets.
+Using presets
+¶
+The miniDSP Flex Eight (DL) has four onboard presets, each of which contains all of the settings for audio processing.
+Info
+Items controlled by the front panel and remote control
+(volume, mute, input source, Dirac Live on/off) are
+not stored in the presets. Similarly, items accessed from the left sidebar, such as front panel brightness and audio source configuration, are not stored in presets.
+Selecting a preset
+¶
+Click on the desired preset number. Or if you have renamed the presets, its name.
+When a preset is selected, two things happen in the Flex Eight:
+The values that you have set up for that preset using Device Console are loaded into the DSP
+working memory, and
+The Dirac Live filters that you exported to the  Flex Eight are also loaded into
+the DSP working memory.
+Renaming
+¶
+To rename a preset, select it, then click the RENAME button. Enter the desired name, then click OK.
+The name can be up to 12 letters long.
+Info
+The preset name is displayed in the Device Console 
+only
+.
+The front panel
+of the Flex Eight will still display "Preset 1" through "Preset 4".
+Importing and exporting
+¶
+Use the buttons provided to export and import presets.
+Tip
+To copy one preset to another, export the first preset to a file, select the
+second present, and then import the file that you just saved.
+Export a single preset
+¶
+To export a single preset to a file, click the EXPORT button. Navigate to the desired location in the file system,
+change the file name if desired, and click 
+Save
+.
+Export all presets
+¶
+To export all four presets to individual files, click the EXPORT-ALL button. Navigate to the desired location in the file system and click 
+Select Folder
+. Any presets that are not at the default setting will be written to files named 
+exported-Flex Eight-
+nnnn
+-preset-1
+ and so on (where 
+nnnn
+ is your device's serial number).
+Note
+It is not possible to load a preset 
+from
+ the Flex Eight back to the Device Console.
+We therefore strongly recommend always exporting all of your presets to files when they are complete, to
+ensure that you don't lose them in future.
+Import a single preset
+¶
+To import a single preset from a file, click the IMPORT button, then navigate to a saved preset file and click
+Open
+. The preset will be loaded from the file. If Device Console is currently
+connected to the miniDSP Flex Eight (DL), the preset will also be sent to the Flex Eight.
+Import multiple presets
+¶
+To import more than one preset in a single go, click the IMPORT-ALL button and then navigate to the folder
+containing the presets. Use Ctrl-click (Windows) or Cmd-click (macOS) to select up to four files, then click 
+Select File(s)
+. A dialog box will appear that allows you to assign one of the selected files to each preset slot. After
+doing this, click 
+IMPORT
+.
+(Note that you can import a single preset into more than one preset slot using IMPORT-ALL.)
+Resetting
+¶
+To reset the current preset to default values, click the RESET button.
+To reset all four presets to default values, click the RESET-ALL button.
+Configuring a device
+¶
+Firmware updates
+¶
+miniDSP Device Console will check for firmware updates when a device is connected, and notify you if
+one is available. To manually update the firmware, click the 
+Refresh DSP Firmware
+and 
+Refresh XMOS Firmware
+ button.
+Tip
+You do not need to use these buttons in normal operation. They are there in case your
+Flex Eight has
+issues or miniDSP Support instructs you to refresh the firmware. They can also be used when
+downgrading from a beta release to the previous stable release.
+Convert to Flex Eight
+¶
+The miniDSP Flex Eight (DL) can be reverted to the non-Dirac Live version, the Flex Eight.
+After doing so, switch to using the 
+Flex Eight User Manual
+.
+Warning
+All configuration presets will be 
+erased
+. Ensure that you have saved all of your configurations
+to named files if you wish to preserve any of the data. Once your device has been converted to
+a Flex Eight, you will not be able to load the Flex Eight configuration files
+into it. Any filters or crossovers that you wish to transfer over must be reloaded from scratch as a new
+configuration in the Flex Eight.
+Note
+The Flex Eight does not run at the same internal sample rate as the miniDSP Flex Eight (DL).
+All biquad filters, included those generated by REW Auto EQ, will need to be regenerated
+at 
+96 kHz
+.
+To begin, click on
+Convert to Flex Eight
+.
+After confirming, the device will disconnect and you will need to reconnect to it.
+The miniDSP Flex Eight (DL) presets will not be converted to the Flex Eight.
+When reconnecting, you can choose to either restore all presets to their default values
+or to use existing Flex Eight presets.
+Note that this operation is fully reversible: you can freely convert back and forth between
+the standard and Dirac Live versions.
+Tip
+Be sure to use the 
+Flex Eight version of the manual/help
+after you have converted.
+Display settings
+¶
+Controls to manage the front panel display are accessed from the left sidebar. Click on
+Front Panel Display
+ to access them. 
+Idle Timeout
+¶
+The idle timeout is the amount of time after any user interaction until the front panel turns off.
+It can be set to a value between 3 and 120 seconds. The display will turn on again on any user interaction.
+Brightness
+¶
+The active brightness level is the screen brightness when it is turned on. It can be set to a value
+between 1, the dimmest, and 8, the brightest.
+Info
+The minimum setting of "1"  does not turn the display fully off, but to the minimum supported brightness level.
+Dynamic range enhancement
+¶
+The DAC chip used in the miniDSP Flex Eight (DL) has an inbuilt 
+dynamic range enhancement
+ (DRE) feature.
+This feature adjusts the analog gain of the DAC's output stage in response to the output signal level. The result is
+a lower noise floor at low signal levels and thus an increase in dynamic range.
+However, the feature can in some cases cause minor clicks or pops in the audio. If you notice this,
+turn off DRE using the switch in the left sidebar:
+Warning
+Changing this setting can itself cause a click or pop in the audio output. We therefore recommend
+that you turn your power amplifiers 
+off
+ when changing it.
+Settings
+¶
+These settings are for Device Console itself (and not any connected
+processor).
+Timeout
+ is the amount of time that Device Console will scan for networked
+devices.
+The 
+Check Interval
+ setting sets how often Device Console checks for a new release or updated
+firmware. Click on the 
+Check Now
+ button to force it to check immediately.
+The 
+Modes
+ selection sets Device Console to display with a light theme, a dark theme, or with the same theme
+as your operating system (Windows or macOS). If you choose the System option, you may need to quit
+Device Console and restart it for the change to take effect.
+The 
+Install USB Audio Driver
+ feature installs the latest version of the miniDSP UAC2 audio driver.
+It appears on 
+Windows
+ only. 
+See 
+Installation
+ for more information.
+Create Program Snapshot
+¶
+The 
+Create Program Snapshot
+ feature is used to help miniDSP Support diagnose issues you may
+be having with your unit. See
+Obtaining Support
+.
+Beta releases
+¶
+To enable beta releases of Device Console and device firmware, set the 
+Beta Releases
+ toggle switch to 
+on
+.
+If you want to then check for a beta release immediately, click the 
+Check Now
+ button.
+Warning
+Beta software may have bugs and operational issues, and there is no support in the normal sense for beta
+software. Turn this feature on only if you are very familiar with how
+Device Console works and are willing and able to report bugs and provide troubleshooting information.
+Most users should 
+not
+ turn this feature on.
+If you experience a significant bug while using beta software, please open a support ticket to report the
+issue, providing as much detail as possible including screenshots and a program snapshot.
+Device Console will need to restart after installing the beta version. It will then prompt to upgrade
+the firmware if there is  beta firmware available.
+To revert from the beta version back to the previous stable version, set the 
+Beta Releases
+ toggle switch to 
+off
+.
+Then click the 
+Check Now
+ button. Device Console will need to restart after installing the stable version.
+You will then need to 
+manually
+ refresh the DSP and XMOS 
+firmware
+.
+                            Signal Flow 
+↵
+Signal flow
+¶
+Flex Eight signal flow
+¶
+The diagram below is a simplified representation of the signal flow
+through the miniDSP Flex Eight (with Dirac Live):
+Signal flow of the miniDSP Flex Eight (with Dirac Live)
+The audio signal in the diagram flows from left to right:
+One of the four stereo input sources is selected by the user.
+    The per-input volume offset
+    is applied to the input channels at this stage.
+The selected input signal is passed through 
+stereo
+ Dirac Live processing.
+The processed input channels are fed into a
+    2-in 8-out routing
+    matrix that routes/mixes the two processed input channels to the
+    eight output channels.
+Each output channel runs a comprehensive set of DSP functions:
+    parametric EQ, crossovers, delay, output gain and compressor.
+Finally, the master volume control is applied 
+    and output levels are captured for display in Device Console.
+The combination of the routing matrix and the crossover blocks on the
+output channels is what gives the miniDSP Flex Eight (DL) the ability to be used in many
+different system configurations.
+Tip
+When using Dirac Live,
+first set up the matrix mixer and the output channel crossovers using the
+miniDSP Device Console. Then in the Dirac Live app, export the generated
+filters into the same-numbered slot. For example, if you set up preset 2 in DC,
+export the filter in Dirac Live to slot 2.
+Flex Eight-N signal flow
+¶
+The Flex Eight-N has a similar signal flow, but with the addition of the
+hybrid analog-plus-Dante digital output stage, as shown here:
+Signal flow of the miniDSP Flex Eight-N (DL)
+Info
+If using both analog and digital outputs, note that there is a slight
+additional latency on the Dante outputs, of approximately 1.5 ms.
+Clock domains in the miniDSP Flex Eight-N (DL)
+¶
+Because the miniDSP Flex Eight-N (DL) has digital inputs 
+and
+ outputs, at least one
+asynchronous sample rate convertor is needed. In the case of the Flex Eight-N,
+there are two, as illustrated in the following diagram.
+Clock domains in the miniDSP Flex Eight-N (DL) (click for larger)
+There are three clock domains:
+At the left, the digital input source has its own clock. It could be running at 44.1 kHz, or 96 kHz, or any sample rate up to 216 kHz.
+In the middle, the Flex Eight-N executes its internal audio processing in its own clock
+domain, at 48 kHz. (If Dirac Live has not been activated, the internal sample rate is
+96 kHz.) 
+At the right, the Dante controller runs the Audio-over-IP network at the sample rate chosen by the
+user – typically 48 kHz, but it can be run at 96 kHz.
+High-quality ASRCs convert the audio signal between the clock domains as necessary. Note that the ASRC
+is needed even if the nominal sample rate on both sides is the same. For example, if the digital input source is at 48 kHz, that does not mean it has the same 
+clock
+ as the Flex Eight-N does internally. Similarly, the internal audio processing of the
+Flex Eight-N does not sync to the Dante clock, even if it has the same sample rate.
+The short version is: the sample rate conversion between clock domains is completely transparent.
+With digital sources running at any sample rate, the Flex Eight-N works seamlessly as a member of the Dante Audio-over-IP network.
+Input Channels
+¶
+Overview
+¶
+The different elements on each control strip are shown here:
+Channel label
+¶
+Each input channel has a customizable label displayed at the top of the
+channel strip.  To change
+the label, click on it and type a new label (up to 12 characters).
+Current RMS level, Level meter
+¶
+Displays the current input signal level in real time, after the per-input
+volume offset has been applied.
+The range of the visual bargraph is -72 dB up to +12 dB.
+Info
+The Flex Eight must be connected and online
+to display signal levels.
+Dirac Live delay
+¶
+The delay (in milliseconds) that Dirac Live has set
+for this channel. This cannot be changed directly by the user.
+Dirac Live gain
+¶
+The gain (in dB) that Dirac Live has
+set for this channel. This cannot be changed directly by the user.
+Signal routing
+¶
+Overview
+¶
+Each input channel can be sent, or 
+routed
+, to any number of output channels.
+This is accomplished with the routing buttons at the top of the
+output channel strips. This is the default routing:
+In addition to routing, the miniDSP Flex Eight (DL) supports mixing, where
+input channels can be mixed at different levels to a single output channel. The complete
+set of routing controls along the top of the output channel strips is therefore also called
+the "matrix mixer."
+Basic routing
+¶
+To route an input channel to an output channel, click on the input channel's name. When routed, the
+button is green:
+Note: if the input channel has been renamed, its name will appear instead of e.g. "Input 1".
+Mixing
+¶
+To mix both input channels to an output, select both of them:
+By default, each input channel is mixed at "full strength" – that is, without any attenuation, as
+indicated by the "0 dB" label. To mix at different levels, click on the level button and either use the slider
+or enter the desired value directly. The gain of the signal being mixed can be
+set to a value between -72 and +12 dB. 
+In this example, both channels are mixed at half level (-6 dB):
+Routing examples
+¶
+This section illustrates a few examples of signal routing. In these examples, the input and output channels have been
+renamed by typing in the labels at the top of the channel strips. We recommend you do the same to
+help avoid errors.
+Three-way active speaker and integrated subwoofer
+¶
+The diagram below shows the connections for a three-way active
+speaker with a powered subwoofer. Amplification for the speaker drivers
+can be either a multichannel amplifier, or a set of stereo amplifiers.
+Connecting a three-way active speaker and subwoofer using the miniDSP Flex Eight (DL)
+The routing for this system is:
+The left input is routed to outputs 1, 3, and 5 for the woofer, mid and tweeter. The right input channel
+is similarly routed to outputs 2, 4 and 6. Each output channel will need appropriate crossover filters.
+In addition, both channels are summed to output 7 for the subwoofer. This channel will require
+a low pass filter.
+For a tutorial-style walkthrough to develop the three-way crossover, see this application note on our website:
+Designing a 3-way active speaker with the miniDSP Flex Eight
+Once the active speaker is done, integrate the subwoofer using the same techniques as for passive
+speakers:
+2.1 Subwoofer Integration with miniDSP and REW
+Stereo speakers plus multisub
+¶
+With 8 outputs, the Flex Eight has a huge amount
+of flexibility. For example, if you'd like to integrate more than two subwoofers
+with stereo speakers, the Flex Eight has more than enough outputs!
+This diagram shows the connections for stereo speakers and four subwoofers:
+Typical connections for stereo speakers and multisub control with the miniDSP Flex Eight (DL)
+The routing for this system is:
+To configure the multisub system, one approach is to simply set the time delay
+on each subwoofer to match their relative distances from the listening
+position. However, more advanced methods can give a better result. For an
+introduction to methods of optimizing a group of subwoofers, see this
+application note:
+Tuning multiple subwoofers with miniDSP
+Output Channels
+¶
+Overview
+¶
+Each of the eight
+output channels has a complete "strip" of controls:
+Channel label
+¶
+Each output channel has a customizable label displayed at the top of the
+channel strip.
+To change the label, click on it and type a new label (up to 12 characters).
+Signal routing
+¶
+Sets the routing from input channels to output channels. See
+Signal routing
+.
+CROSSOVER
+¶
+Click on this button to open the crossover settings window for that output
+channel. 
+If there are crossover filters enabled, the color of the button changes to yellow.
+This provides an at-a-glance indication of crossover status:
+For more information, see the page 
+Crossover
+.
+PEQ
+¶
+Click on this button to open the parametric EQ settings window for that output
+channel. There are 10 parametric EQ filters on each output channel.
+If there are active parametric EQ filters, the color of the button changes to yellow.
+This provides an at-a-glance indication of filter status:
+For more information, see the page 
+Parametric EQ
+.
+Time delay
+¶
+A delay of up to 
+30 ms
+can be applied to each output channel. To set the
+delay, click on the delay button for a channel. The delay value can
+be entered by moving the slider or it can be entered numerically. The up and down arrow keys can be used to change
+the delay in 
+0.02 ms
+ increments.
+Gain adjustment
+¶
+The gain of each output channel can be set to a value between ‑72 dB and
++12 dB. (0 dB, the default, is unity gain or no change in level.)
+ To set the gain, click on the Gain value of that channel.
+The gain can
+be entered by moving the slider or it can be entered numerically. The up and down arrow keys
+can be used to change
+the gain in 0.1 dB increments.
+Invert
+¶
+Each output channel can be inverted in polarity. To invert, press the
+Invert button. The status is indicated by a change in color and label:
+Mute
+¶
+Each output channel can be individually muted. To mute it, press the
+Mute button. The status is indicated by a change in color and label:
+Compressor
+¶
+Click on this button to open the compressor settings window for that output
+channel. 
+If the compressor is enabled, the color of the button changes to yellow.
+This provides an at-a-glance indication of compressor status:
+For more information, see the page 
+Compressor
+.
+Current RMS level, Level meter
+¶
+Displays the current signal level on that output channel in real time, after
+master volume has been applied.
+The range of the visual bargraph is -72 dB up to +12 dB.
+Info
+The Flex Eight must be connected and online
+to display signal levels.
+Ended: Signal Flow
+                            DSP Reference 
+↵
+DSP Reference
+¶
+The miniDSP Flex Eight (DL) includes several DSP (digital signal processing) functions designed specifically
+for audio applications. The design of the user interface
+makes these much easier to use than traditional engineering tools.
+This section provides full details of these functions. Pages in this section:
+Parametric EQ
+Crossover
+Compressor
+On Inter-sample Peaks
+Parametric EQ
+¶
+Parametric equalization (PEQ)
+is a flexible type of
+equalization filter.
+It can be used to correct for errors in loudspeaker
+output, to compensate for acoustic room effects, and to tailor the
+overall system response for best sound.
+Overview
+¶
+Click on the PEQ button to open
+the parametric equalizer settings window:
+The miniDSP Flex Eight (DL) has
+10  parametric EQ filters on each  output channel.
+The graph displays the response of each filter in a light color and the
+combined response of all
+enabled filters as a heavy line. For example, the
+curve shown above has a low-shelf boost at 100 Hz, a dip at 500 Hz, and a
+high-shelf cut at 5000 Hz.
+Editing filters
+¶
+Change the frequency and gain of each filter by clicking and dragging on the drag-points
+(colored circles) on the graph. The full set of parameters can be edited as described below.
+Hovering the mouse over any curve brings up an overlay showing the
+frequency and the gain at that frequency.
+Disabling individual filters
+¶
+All 10 filters are enabled by default. To disable a single filter, select
+it with the row of buttons, then click on the Enable button to turn it off:
+Disabled filters are greyed out, as illustrated in this example in which filter bands 8 through 10
+are disabled:
+Note also that a
+filter will have no effect if its gain is set to 0.0 (except for filters of type All Pass,
+which have no gain parameter).
+Disabling and enabling all filters
+¶
+All 10 filters can be disabled and enabled by a click on the Disable All
+or Enable All buttons:
+Note that these buttons disable or enable 
+all
+ filters. For example, if you have filters 1 to 7
+enabled and filters 8 to 10 disabled, then clicking Disable All followed by
+Enable All will result in 
+all
+ filters being enabled, including filters 8 to 10.
+Filter mode
+¶
+The parametric EQ filters can be set in either basic mode or advanced mode. Basic mode allows
+each filter to be specified simply by providing four parameters, while advanced mode requires
+the use of a separate design program.
+Basic mode
+¶
+The shape of the parametric EQ filters is set with a small set of intuitive parameters.
+Frequency
+¶
+For PEAK  filters, this is the center frequency of
+the peak or dip. For HIGH_SHELF and LOW_SHELF filters, this is
+the frequency at which the gain is half of the set value.
+For ALL_PASS
+filters, this is the center frequency of the phase shift.
+Gain
+¶
+For PEAK  filters, this is the gain in dB at the
+center frequency. For HIGH_SHELF and LOW_SHELF filters, this is
+the gain in dB reached at high or low frequencies respectively. A filter
+has no effect if its gain is set to 0 dB. Gain can be adjusted in
+increments of 0.1 dB up to +/- 16 dB.
+This item is not present for the ALL_PASS
+filter type.
+Q
+¶
+Q controls the "sharpness" of the filter. For
+PEAK  filters, lower Q gives a broader peak or dip, while higher Q gives a
+narrower peak or dip. For HIGH_SHELF and LOW_SHELF filters, Q
+controls how quickly the filter transitions from no gain to maximum gain.
+For
+ALL_PASS filters, higher Q gives a steeper phase transition.
+Filter type
+¶
+Selects the type of filter:
+PEAK
+Create a dip or a peak in the frequency response.
+LOW_SHELF
+Reduce or increase part of the frequency spectrum 
+below
+ a given
+frequency.
+HIGH_SHELF
+Reduce or increase part of the frequency spectrum 
+above
+ a given
+frequency.
+ALL_PASS
+Create a phase shift across the frequency band. This can
+be useful for correcting phase issues and for simulating analog
+crossovers.
+Keyboard and mouse operations
+¶
+Most parameters can be navigated and set using the keyboard.
+The Tab key will move focus between fields; Shift-Tab will move in the opposite direction.
+Except for Filter Type, parameters can be edited by:
+Clicking and dragging on a slider. Once the focus is on a slider,
+you can also change the value with the left and right arrow keys on the keyboard.
+Clicking in the value field and typing a new value. Once the focus is in a value field,
+you can also change the value with the up and down arrow keys on the keyboard.
+Move the mouse cursor over the parameter and use the mouse scroll wheel or equivalent gesture on a trackpad.
+For Filter Type, once the focus is in the field, press:
+Space or Enter to bring up the selection menu,
+Tab to move the focus to the menu,
+The up and down arrows to move the focus up and down the menu,
+Space to select the current menu entry and close the menu.
+Jumping between channels
+¶
+To jump quickly between the parametric EQ window of different channels, enable the
+Menu switch at the top right. Jump to a different channel by clicking  on the 
+row of buttons:
+Linking channels
+¶
+Each
+channel can be linked to one other channel. When a channel is linked to
+another, the PEQ settings of that channel are mirrored to the other.
+Typically, corresponding channels on the left and right are linked: for
+example, left and right tweeter and left and right woofer.
+To link a channel, enable the
+Menu switch at the top right. Click on the channel that you want to link the current channel to.
+After confirming, an indicator appears to show the new link:
+Info
+A channel can be linked to only one other channel. That is, you cannot link three or more channels.
+Reset to default
+¶
+To reset all parametric EQ filters of the current channel to the default settings, enable the
+Menu switch at the top right and click the RESET TO DEFAULT button:
+Warning
+This operation is not reversible, so be sure you mean to reset all of your filters! Save your settings
+to a file first if you need to keep any.
+Advanced mode
+¶
+Advanced mode enables custom biquad programming for
+almost infinite flexibility in filter implementation.
+In this mode, each individual filter
+to be specified by its 
+biquad coefficients
+. The coefficients must be generated by a design program
+such as Room EQ Wizard (REW). 
+The design program must be set for a 
+48 kHz
+ sample rate.
+Programming a single biquad
+¶
+Each parametric EQ filter can be individually switched to advanced mode. Paste in the
+coefficients in the format shown and click on the 
+PROCESS AND APPLY
+ button for them to take effect.
+Click the 
+RESET
+ button to set the coefficients back to their default values.
+Info
+Switching between basic and advanced mode does not convert between Frequency/Gain/Q and biquad
+parameters.
+The basic parameters and advanced biquad coefficients for each filter are
+stored independently and the selected set is used for processing.
+Loading a biquad file
+¶
+Multiple biquads can be set at once by
+loading a file containing biquad coefficients. This example illustrates the correct file format:
+biquad1,
+b0=0.998191200483864,
+b1=-1.9950521500467384,
+b2=0.996920046761057,
+a1=1.9950521500467384,
+a2=-0.9951112472449212,
+biquad2,
+b0=0.999640139948623,
+b1=-1.9981670485581222,
+b2=0.9985489719847982,
+a1=1.9981670485581222,
+a2=-0.9981891119334211,
+biquad3,
+..
+biquad4,
+..
+biquad10,
+b0=1.0010192374642126,
+b1=-1.9950555192569264,
+b2=0.9940580112181501,
+a1=1.995060938714333,
+a2=-0.9950718292249559
+To load the file, select the Menu switch at the top right and click the 
+LOAD BIQUADS FILE
+ button.
+The filters are set to advanced mode starting at EQ1.
+If the loaded file contains fewer than 10 biquads, then only that number of
+EQ filters will be set to Advanced mode. For example, if loading a file with six biquads, EQ1 to EQ6 will be set to
+Advanced mode, and EQ7 to EQ10 will not be changed. This can be used to good effect in cases
+where manually-set parametric EQ (in Basic mode) is required in addition to parametric EQ developed
+with a design program.
+If the loaded file contains more than 10 biquads, then only the first
+10 will be loaded.
+Biquad design software
+¶
+Following are programs that can be used to design your biquad
+coefficients. 
+The design program must be set for a 
+48 kHz
+ sample rate.
+Biquad calculation spreadsheet
+¶
+The community-developed biquad calculation spreadsheet allows many
+filter types to be calculated, including notch filters, Linkwitz
+transforms, and filters with arbitrary Q-factor. Access this spreadsheet
+here (requires Microsoft Excel):
+Download zipped spreadsheet from miniDSP.com
+Room EQ Wizard (REW)
+¶
+Room EQ Wizard is a free acoustic measurement and analysis tool,
+available for Windows, Mac and Linux platforms. It includes the ability
+to automatically generate a bank of parametric EQ biquads based on a
+measurement. These coefficients can be saved to a file from REW and
+loaded using the Device Console. Room EQ Wizard can
+be downloaded from:
+Room EQ Wizard downloads
+For guidance on using this feature, refer to the app note
+Auto EQ with Room EQ Wizard
+.
+Crossover
+¶
+Crossovers "split" the frequency band to send to different drivers. In a
+two-way loudspeaker, for example, a 
+low pass
+ filter is used to remove high
+frequencies from the signal sent to the woofer, and a 
+high pass
+ filter
+is used to remove low frequencies from the signal sent to the tweeter. 
+In a three-way speaker, the midrange driver
+will use both the high pass and low pass filters.
+When integrating a subwoofer, high pass filters are used on the speakers
+and a low pass filter on the subwoofer.
+Crossover filters can also be
+used to limit low frequency content delivered to a speaker or subwoofer,
+to help protect it from over-excursion.
+Unlike conventional analog crossovers, the flexibility of DSP allows a
+completely arbitrary mix of different filter slopes and types. Filters
+can be set at any frequency or disabled completely. This allows maximum
+flexibility in matching your crossover to the acoustic characteristics
+of the loudspeaker drivers.
+Overview
+¶
+Each output channel  has independent high
+pass and low pass crossover filters. Click on the 
+CROSSOVER
+ button to
+open the crossover settings window:
+The current channel is displayed in orange, with the others displayed in
+grey. Hovering the mouse over the curve brings up an overlay showing the
+frequency and the attenuation at that frequency.
+Info
+The channel names on the right hand side may be out of order. This is an unavoidable artifact of
+the library used to draw the graphs: the graph that displays on top also comes first
+in the list.
+Crossover mode
+¶
+The crossovers on each output channel can be set in either basic mode or advanced mode. Basic mode allows
+each crossover filter to be specified simply by providing two parameters, while advanced mode requires
+the use of a separate design program.
+Basic mode
+¶
+In basic mode, there are two crossover filters on each output channel: high pass
+(removes low frequencies) and low pass (removes high frequencies). In basic mode, these two
+filters are completely independent and each has its own settings.
+Enable
+¶
+The crossover filters are disabled by default. To enable a crossover filter, click on the Enable
+switch.
+Cut-off frequency
+¶
+Sets the nominal cutoff frequency of the crossover. In actual fact, the
+crossover has a more or less gradual transition from "full on" to "full
+off," as determined by the filter slope.
+Filter type
+¶
+Selects the type and slope of the filter. The steeper the slope, the
+more quickly frequencies above or below the cutoff frequency are
+attenuated. There are three types of filter:
+Butterworth (BW)
+Available in 6, 12, 18, 24, 30, 36, 42, and 48 dB/octave, Butterworth
+crossover filters are 3 dB down at the cutoff frequency.
+Linkwitz-Riley (LR)
+Available in 12, 24, and 48 dB/octave, Linkwitz-Riley crossover
+filters are 6 dB down at the cutoff frequency.
+Bessel
+Available in 12 dB/octave only, a Bessel filter gives a more gradual
+roll-off through the crossover region.
+Keyboard and mouse operations
+¶
+Most parameters can be navigated and set using the keyboard.
+The Tab key will move focus between fields; Shift-Tab will move in the opposite direction.
+Except for Filter Type, parameters can be edited by:
+Clicking and dragging on a slider. Once the focus is in a value field,
+you can also change the value with the left and right arrow keys on the keyboard, or by
+using the mouse scroll wheel or equivalent gesture on a trackpad.
+Clicking in the value field and typing a new value. Once the focus is in a value field,
+you can also change the value with the up and down arrow keys on the keyboard, or by
+using the mouse scroll wheel or equivalent gesture on a trackpad.
+If the focus is on the Enable button, it can be toggled with the Space key.
+Move the mouse cursor over the parameter and use the mouse scroll wheel or equivalent gesture on a trackpad.
+For Filter Type, once the focus is in the field, press:
+Space or Enter to bring up the selection menu,
+Tab to move the focus to the menu,
+The up and down arrows to move the focus up and down the menu,
+Space to select the current menu entry and close the menu.
+Jumping between channels
+¶
+To jump quickly between the crossover window of different channels, enable the
+Menu switch at the top right. Jump to a different channel by clicking  on the 
+row of buttons:
+Linking channels
+¶
+Each
+channel can be linked to one other channel. When a channel is linked to
+another, the crossover settings of that channel are mirrored to the other.
+Typically, the corresponding
+drivers on the left and right channels are linked: left and right
+tweeter, left and right woofer, and so on.
+To link a
+channel, enable the
+Menu switch at the top right. Click on the channel that you want to link the current channel to.
+After confirming, an indicator appears to show the new link:
+Info
+A channel can be linked to only one other channel. That is, you cannot link three or more channels.
+Hiding channels
+¶
+By default, the crossover graph shows the crossovers of all eight output channels.
+The current channel is displayed in orange and the others in black.
+If you wish to view only a subset of channels, use the switches to the right of the graph to select
+channels to hide. In this example,
+channel 2 is the current channel. Channels 1 to 3 are visible, while channels 4 to 8 are hidden:
+In this example, the crossover settings of channels 1, 2 and 3 can be changed by using the channel
+selection buttons at the top of the window
+to jump between them. As long as you stay on these channels, the set of hidden channels stays the same.
+However, if you switch to a hidden channel, that channel then becomes visible. (For example, if you switch
+to channel 6, then channels 1, 2, 3 and 6 will be visible.)
+Advanced mode
+¶
+The crossover block on each output channel has eight biquads. In Basic mode, four are allocated
+to the high pass filter and four to the low pass filter. In Advanced mode, however, the eight biquads
+are all specified by their coefficients, in the following format:
+biquad1,
+b0=0.998191200483864,
+b1=-1.9950521500467384,
+b2=0.996920046761057,
+a1=1.9950521500467384,
+a2=-0.9951112472449212,
+biquad2,
+b0=0.999640139948623,
+b1=-1.9981670485581222,
+b2=0.9985489719847982,
+a1=1.9981670485581222,
+a2=-0.9981891119334211,
+biquad3,
+..
+biquad4,
+..
+biquad8,
+b0=1.0010192374642126,
+b1=-1.9950555192569264,
+b2=0.9940580112181501,
+a1=1.995060938714333,
+a2=-0.9950718292249559
+These biquads can be used for almost
+infinite flexibility (within the limits of eight biquads). For example, you could use two biquads
+for a fourth-order high pass filter, and the remaining six for parametric EQ.
+Setting biquads for the crossover block
+¶
+Paste the coefficients into the text box, then click on the
+PROCESS AND APPLY
+ button for them to take effect.
+Info
+Switching between basic and advanced mode does not convert between Frequency/Filter type and biquad
+parameters.
+The basic parameters and advanced biquad coefficients for each filter are
+stored independently and the selected set is used for processing.
+Biquad design software
+¶
+Following are programs that can be used to design your biquad
+coefficients. 
+The design program must be set for a 
+48 kHz
+ sample rate.
+Biquad calculation spreadsheet
+¶
+The community-developed biquad calculation spreadsheet allows many
+filter types to be calculated, including notch filters, Linkwitz
+transforms, and filters with arbitrary Q-factor. Access this spreadsheet
+here (requires Microsoft Excel):
+Download zipped spreadsheet from miniDSP.com
+Room EQ Wizard (REW)
+¶
+Room EQ Wizard is a free acoustic measurement and analysis tool,
+available for Windows, Mac and Linux platforms. It includes the ability
+to automatically generate a bank of parametric EQ biquads based on a
+measurement. These coefficients can be saved to a file from REW and
+loaded using the Device Console. Room EQ Wizard can
+be downloaded from:
+Room EQ Wizard downloads
+For guidance on using this feature, refer to the app note
+Auto EQ with Room EQ Wizard
+.
+Compressor
+¶
+The compressor reduces the gain of an output channel when the audio
+signal reaches the level specified by the 
+Threshold
+ parameter. The
+gain of the channel will be progressively reduced as the signal
+increases above the threshold, according to the 
+Ratio
+ parameter.
+This can be used to limit the power delivered to speakers and thus
+reduce the risk of damage from overdriving.
+Overview
+¶
+This
+screenshot shows an example Compressor setting:
+(Note that the compressor algorithm is bypassed by default, so click on
+the 
+Bypass
+ button to see the curve as shown here.)
+In this example, the threshold is set to −20 dB, so the compressor will
+activate when the signal on that channel reaches −20 dB (relative to
+full output). The ratio is set to 2, so if the input signal level to the
+compressor then increases by 10 dB, the output level will increase by
+only 5 dB. If the input signal level to the compressor is at full scale
+(0 dB), then the output level will be limited to −10 dB.
+Two additional parameters control the action of the compressor: the
+attack time and the release time. These two parameters govern how
+quickly the compressor activates when the signal level exceeds the
+threshold, and how quickly it deactivates when the signal level reduces.
+The optimum settings may need to be tuned by ear. For more information,
+see the Wikipedia article 
+Dynamic range
+compression
+.
+Enable
+¶
+The compressor block is disabled by default. To enable it, click on the Enable Compressor
+switch. The graph will change from a dashed grey line (disabled) to a solid colored line (enabled).
+Keyboard and mouse operations
+¶
+Parameters can be edited by:
+Clicking and dragging on a slider. Once the focus is on a slider,
+you can also change the value with the left and right arrow keys on the keyboard.
+Clicking in the value field and typing a new value. Once the focus is in a value field,
+you can also change the value with the up and down arrow keys on the keyboard.
+Move the mouse cursor over the parameter and use the mouse scroll wheel or equivalent gesture on a trackpad.
+The Tab key will move focus between fields; Shift-Tab will move in the opposite direction.
+Jumping between channels
+¶
+To jump quickly between the compressor window of different channels, enable the
+Menu switch at the top right. Jump to a different channel by clicking  on the 
+row of buttons:
+On Inter-Sample Peaks
+¶
+In digital audio, the term 
+inter-sample peak
+ is used to refer to clipping of
+ a digital audio signal that can occur when:
+The digital audio signal is scaled in amplitude without regard to the analog signal that it represents, 
+and
+That digital audio signal is converted to a different sample rate.
+This page will explain what an inter-sample peak (ISP) is, how it occurs, and how to handle them  in the miniDSP Flex Eight (DL).
+A brief explanation of ISPs
+¶
+Figure 1 shows an analog signal in blue and a possible digital sampling of it in red.
+Figure 1
+This artificial signal won't occur in real music but it's useful to explain the concept. If the sample rate is 44.1 kHz, the figure shows one cycle of an 11.025 kHz sine wave. The maximum allowable levels of the digital signal are +1 and -1, and the digital samples have the value 0.707 or -0.707.
+In digital music production, it's common to try and maximize the digital signal level. If this is done in a simple manner with the signal shown above, the result is as shown in Figure 2.
+Figure 2
+Each sample has been scaled up to have a value of +1 or -1. They are still within the digital range. However, the analog signal that this digital stream now represents has sections that exceed the +/-1 limit. The peaks in this underlying analog signal are referred to as the 
+true peaks
+. The true peak is marked in Figure 2. For a more detailed discussion, see the BBC Whitepaper 
+Terminology for Loudness and Level dBTP, LU and all that
+.
+If this digital signal is then converted to a different sample rate, some of the new samples will be over the digital limit.
+ This is illustrated in Figure 3.
+Figure 3
+Since they are over the digital limit, however, they cannot be represented correctly and will 
+clip
+. The signal we end up with is shown in Figure 4, which has a lot of distortion.
+Figure 4
+The clipped samples in Figure 4 are referred to as 
+inter-sample peaks
+. (The term is not quite accurate, but we
+use it as it's commonly used for this phenomenon. By convention, 
+true peak
+ is the actual peak value of the
+underlying analog waveform, and 
+inter-sample peaks
+ are the sample that exceed the digital limit after sample-rate conversion and are therefore clipped.) ISP's are also called "inter-sample overs."
+ISPs with music signals
+¶
+While the previous section used an artificial signal to illustrate the concept of ISPs, they also occur with music signals. The amount by which the true peaks of a music signal exceed the digital maximum depends on the music and the way that it was processed digitally. For example, the author of the web page 
+What are inter-sample peaks and true peaks?
+ has measured true peaks up to 2.4 dB over the digital limit.
+It's possible that clipped inter-sample peaks are less of an issue with modern recordings, due to increased awareness of the issue in music production and greater availability of production tools that are able to measure the true peak of a digital audio track.
+It's also worth also noting that most streaming services require that music uploaded to them has a maximum true peak of -1 or -2 dB. (The 1 or 2 dB headroom is to allow for errors when the music is streamed via a lossy encoding process.) The web page 
+Mastering for Streaming: Platform Loudness and Normalization Explained
+, for example, lists the maximum allowed true peak – shown as e.g. -1 dBTP – of several services.
+How to handle ISPs
+¶
+As explained above, ISPs become an issue when the sample rate of a full-scale digital audio signal is changed. Most modern DAC chips oversample their incoming audio stream, and are thus susceptible to distortion from ISPs.
+In the miniDSP Flex Eight (DL), while the internal digital processing uses floating-point arithmetic and is therefore not subject to the digital limit until the output to the DAC, it also has an integer-based asynchronous sample rate convertor (ASRC) at the 
+input
+ stage.
+Our solution to ISPs in the Flex Eight
+is to allow the user to reduce the level of the digital signal 
+before
+ it enters the ASRC. This is accomplished by setting the 
+input volume offset
+ of specific inputs to a negative value. A value of -2 to -4 dB is all that is needed:
+Note that this measure is needed 
+only
+ if the digital signal is likely to contain ISPs. The most likely culprit is digital audio originating from a CD or file. As noted above, audio from streaming services is much less likely to have ISPs.
+Note also that, if you play music from digital audio files and you use the audio 
+player
+ to control volume before the signal reaches the Flex Eight, then in most cases you have already removed ISPs by reducing the level of the digital signal.
+Ended: DSP Reference
+                            Dirac Live 
+↵
+Dirac Live
+¶
+The miniDSP Flex Eight (DL) implements 
+stereo
+ Dirac Live correction. That is, there
+    are two channels of Dirac Live correction. After stereo Dirac Live correction, the
+    audio signal is routed to the eight output channels for processing such
+    as parametric EQ and crossovers.
+Info
+Dirac Live requires a direct USB connection from your computer
+to the Flex Eight. It cannot be used via the miniDSP Wi-DG (Wifi to USB bridge).
+Dirac Live overview
+¶
+Dirac Live uses from 9 to 17 measurements made at different locations
+in your listening room to calculate
+correction filters for your speakers
+(and integrated subwoofer if you have one). You will take
+these measurements using the miniDSP processor, the 
+Dirac Live
+application running on your computer, and a miniDSP UMIK-1 or UMIK-2 measurement
+microphone.
+Info
+This software runs on 
+Windows 10 or later
+ and 
+macOS 11 Big Sur or later
+. Other versions of Windows or macOS/OS X are not supported.
+Install or upgrade Dirac Live
+¶
+In addition to miniDSP Device Console, you will need to separately install the Dirac Live software from
+Dirac Research.
+Tip
+If you have previously installed Dirac Live, check that your installed version is up to date, especially if you run into issues. You can see the list of versions in the 
+changelog
+.
+Download the 
+Dirac Live
+ application for your platform from the
+Dirac Research download page
+.
+On macOS, double-click on the diraclive-latest.zip
+download if your browser did not unzip it.
+Double-click on the downloaded installer to run it. It will be named
+diraclive-latest.exe
+ on Windows and 
+DiracLive v3.x.y Setup Darwin
+ on macOS (the version number 
+x.y
+will change as updates are issued). We strongly recommend that you accept the default
+installation settings.
+Do not run the application from the installer, as it must be started with the 
+Start Calibration
+ button in Device Console.
+Download your microphone calibration files
+¶
+Each UMIK-1 and UMIK-2 measurement microphone is individually calibrated to
+ensure accuracy. To download the unique calibration files for your
+microphone, go to the
+UMIK-1 page
+or the
+UMIK-2 page
+.
+Enter your microphone's serial number. It is in the form xxx-yyyy and
+labelled on the microphone.
+Two calibration files are downloaded:
+The regular or "on axis" calibration file will be saved to the
+    computer with a name that is the same as the serial number e.g.
+    "7001870.txt". This is the one that you should use when pointing the
+    microphone towards the speakers.
+The second calibration file has "_90deg" in the name e.g.
+    "7001870_90deg.txt." This corrects the frequency response when the
+    microphone is oriented at 90 degrees to the sound source, such as
+    when pointing the microphone towards the ceiling.
+Connections for Dirac Live calibration
+¶
+The diagram below shows typical connections for acoustic measurement
+with the Dirac Live application. Usually, you do not need to change any
+of the audio connections, as the Dirac Live test signals are generated
+inside the miniDSP processor.
+Connect the supplied USB cable (type A to type B) from the miniDSP Flex Eight (DL)
+    to a USB port on the computer.
+Connect the supplied USB cable (type A to mini type B or type C, depending on
+    version) from the
+    UMIK-1 or UMIK-2 to a USB port on the computer.
+System connections for a stereo Dirac Live system
+Place the UMIK-1 microphone into a microphone stand and position the
+computer and cabling so that there is enough freedom of movement to move
+the microphone into the needed locations. A small tripod stand is
+supplied with the UMIK-1, but a larger stand with boom arm can be used
+if desired. If necessary, a USB extension (up to a total USB cable
+length of 5 meters) can be used. In larger spaces, an active USB
+repeater may be needed.
+For stereo systems, we generally recommend that the microphone be
+    pointed between the speakers and the "0 degree" calibration file
+    used. However, many of our customers point the microphone at the ceiling
+    and use the "90 degree" calibration file. Feel free to try it both ways.
+Loudspeaker and microphone positioning
+¶
+Prior to performing acoustic measurements, optimize your loudspeaker and
+listening positions. Start with the recommendations of the manufacturer
+of your loudspeakers. Loudspeakers designed for home hifi use typically
+perform best away from the walls, whereas speakers designed for studio
+use may be designed for use closer to walls or other surfaces. With
+Dirac Live, you have more freedom with loudspeaker placement, but the
+best result will still be achieved if optimal loudspeaker placement is
+used together with Dirac Live.
+Speaker and microphone positioning for stereo Dirac Live
+You should also experiment with toe-in –
+many loudspeakers benefit from pointing directly at the listening
+position or even slightly in front. The listening position should be
+away from the rear wall, as placing the listening chair or sofa right
+against the wall will result in increased early reflections and changes
+in timbre.
+The first measurement must be taken at
+the 
+exact center
+ of the listening area, so that Dirac Live can set
+the levels and delays of each speaker. While this will usually place the
+microphone an equal distance from both speakers, Dirac Live will adjust
+in cases where it is not. Additional measurements are taken at other
+positions around the listening area and at different heights from the
+floor. All measurement positions should have acoustic "line of
+sight" – that is, the direct signal from the speaker to the microphone should
+not be obstructed by furniture or other objects.
+Check your preset
+¶
+If
+ you have used the miniDSP Device Console to set up routing, crossovers or parametric EQ on
+the output channels, check that you have the correct preset
+selected before starting Dirac Live. This is because the Dirac Live test
+signal originates in the Dirac Live blocks and therefore
+passes through the routing matrix and the output channel
+processing. Refer to the diagram in the 
+Signal Flow Overview
+page to refresh your memory if needed.
+For example, suppose that you have set up preset 2 with routing and
+crossovers for a subwoofer. Before starting Dirac Live with the
+START CALIBRATION
+ button, select preset 2 from within
+the miniDSP Device Console or with the remote control.
+Windows
+¶
+Double-check the following items 
+before
+ starting the Dirac Live
+application.
+UMIK-1 plugged in
+¶
+If you haven't plugged in your UMIK-1 yet, plug it in now.
+Tip
+Be sure to plug in the UMIK-1 
+before
+ starting Dirac Live.
+Check that UMIK-1 is set as the default recording device
+¶
+Open the Windows Control Panel and select
+the Sound pane then the Recording tab. Check that the UMIK-1 is set as
+the default recording device. If it is not, then click on it and then on
+the Set Default button.
+Dirac Live has access to the microphone
+¶
+Open the Windows Settings and select
+Privacy & security, then scroll down and select Microphone. Check that "Microphone access" and "Let apps access
+your microphone" is turned on.
+Scroll down and check that "Let desktop apps access your microphone" is also turned on, and that
+DiracLive is listed in the applications that are allowed to access the microphone:
+macOS users
+¶
+Enable local network access (macOS Sequoia and later)
+¶
+Check that miniDSP Device Console is permitted local network access. Open System Settings, scroll down on the left sidebar and select 
+Privacy & Security
+, then scroll down on the right and click on 
+Local Network
+. If miniDSP Device Console is not enabled, enable it here:
+Enable file sharing for device discovery
+¶
+To enable device discovery, open System
+Preferences and then go to Sharing. Enable File Sharing as shown at
+right.
+Notes:
+a)  This step is not always necessary and may depend on your Mac's
+    configuration or home network setup.
+b)  You can turn File Sharing off again after you have completed your
+    calibrations.
+UMIK-1 plugged in
+¶
+If you haven't plugged in your UMIK-1 yet, plug it in now.
+Tip
+Be sure to plug in the UMIK-1 
+before
+ starting Dirac Live.
+Grant microphone access
+¶
+The heightened security in recent versions
+of macOS can cause some difficulties with the Dirac Live application
+accessing the UMIK-1. The Dirac Live application should request
+microphone access when it first runs. A dialog like this will appear:
+When it does, click 
+OK
+. You can
+confirm that access has been granted by opening System Preferences, then
+going to the Privacy & Security pane, then scroll down and click on Microphone:
+The application "Dirac Live" should appear here. You will typically have
+additional applications to which you have given microphone access.
+First steps
+¶
+Starting Dirac Live
+¶
+To start Dirac Live calibration, click on the START CALIBRATION button:
+The Device Console will disconnect
+and the Dirac Live application will start.
+Info
+Be sure to start the Dirac Live
+application from within the Device Console using the 
+START CALIBRATION
+ button.
+If you open the Dirac Live application by itself, it
+will not be able to detect the Flex Eight.
+Info
+Dirac Live calibration 
+can not
+ be performed
+over the network, so the START CALIBRATION button will be visible only if the Flex Eight is connected
+to the computer by USB.
+Tip
+Before starting Dirac Live, check that you have the correct preset selected on the Flex Eight.
+(This applies only if you have changed the internal audio processing parameters with Device Console. )
+Dirac account login or creation
+¶
+The first time you start the Dirac Live application,
+the option to log in to or create a Dirac account appears:
+Log in here if you have a Dirac account. If you do not have an
+account, you can create one by clicking on "Create or manage your
+account." This will direct you to the Dirac Live website.
+Info
+If you wish, you can click "Proceed without logging in" to perform a
+calibration. You can log in or create an account later by
+selecting 
+Disconnect and log in
+ from the hamburger menu.
+The following functions are enabled only if you are logged into your Dirac
+account:
+Load a previously saved project. You can only load an existing
+    project if you are logged into a Dirac account. If you don't log in,
+    you will be able to save your measurements as a project, but you
+    will not be able to open them again.
+Other optional or paid-for features. miniDSP always provides the
+    "full" version of Dirac Live with its products, so you do not need
+    to log in to use the full version of Dirac Live if you have a
+    miniDSP product.
+Select device/zone
+¶
+The only device visible here will be the miniDSP Flex Eight (DL).
+Click on the device icon to select it and proceed to
+the next tab.
+(If necessary, close the help overlay that obscures
+the device icon.)
+Tip
+If Dirac Live doesn't find your device, see 
+Dirac Live-related connectivity issues
+.
+Features of the Dirac Live UI
+¶
+Once you have selected the miniDSP Flex Eight (DL), the full Dirac Live UI becomes
+visible. This section describes the common features of the UI.
+Sidebar
+¶
+The sidebar shows the currently selected device. The
+lower portion lists loaded filters. The sidebar can be closed by
+hovering over the border with the main area, then clicking on the blue highlight that appears.
+Loaded filters
+¶
+After correction filters have been loaded
+into the miniDSP Flex Eight (DL), the list of loaded filters appears here.
+Tab selection menu
+¶
+Once the output device has been selected,
+the main tab menu appears. This menu indicates which tab you are
+currently viewing. Each tab has buttons to navigate to the previous and
+next tabs. You can also navigate directly to a tab by clicking on its
+name in the menu.
+Main display area
+¶
+The Main display area contains the key information of each tab.
+Main menu
+¶
+The "hamburger" icon towards the top left drops down a menu with a
+number of useful items:
+Notifications
+¶
+When events happen, a notification appears
+to the top right of the window. Normal notifications are in green, with
+warnings and errors in black and orange:
+To close a notification, click on the "X" at its top right.
+Help overlay
+¶
+The help overlay appears on each tab the first time you open it. You can
+scroll to read all of it. Note that the recommendations in the Help
+overlay are generic -- that is, they do not necessarily apply to the
+specific device that you are using. For example, it may say "If your
+HiFi device has a microphone..." -- this does not apply to the miniDSP Flex Eight (DL).
+To close the overlay, click on the icon at
+its top right:
+To open the help overlay again, click on
+the question mark icon:
+Navigation buttons
+¶
+The navigation buttons to the lower left and lower
+right of the main display area link to the next and previous tab, using
+the order in which a complete calibration is normally performed.
+Saving and loading projects
+¶
+To save the project, click on the hamburger icon and select 
+Save
+project
+.
+To load the project, click on the hamburger
+icon and select 
+Load project
+.
+Info
+If you save the project and you are not logged into your Dirac account, you may not be able to load that project again. Be sure to log into your Dirac account before saving the project.
+Configure Dirac Live
+¶
+Select Recording Device
+¶
+Use this tab to select the UMIK-1 and load its calibration file:
+Click on the UMIK-1 microphone
+    to select it. It will be labelled "Microphone (Umik-1 Gain: 18 dB)" or similar.
+At the bottom of the grey rectangle, click on "No microphone
+    calibration" and then "Load from file."
+Locate your UMIK-1 calibration file in the file system and select
+    it. The calibration file name and the calibration curve will then be
+    displayed.
+Once you have verified that this tab is correct, click the 
+Proceed to
+Measurement Levels
+ button.
+Measurement Levels
+¶
+Use this tab to set the output level and microphone recording level.
+For best calibration results, ensure that
+the environment is reasonably quiet. Low frequency noise in particular
+can disrupt the calibration.
+Check that the 
+Master output
+ slider is set low.
+Click on the triangular button for the Dirac 1 channel and gradually
+    increase the 
+Master output
+ slider. You should hear pink noise
+    playing from the left front speaker. Continue to increase volume
+    until it is at a moderate level, such that your voice would have to
+    be raised to converse with someone sitting next to you.
+Increase the 
+Mic gain
+ slider. Setting it so that the level meter reads between
+    -20 and -30 dB will generally give good results.
+Click on the triangular button for the Dirac 2 channel and confirm
+    that the level is around the same as the first channel.
+As a safety feature, output volume is
+limited to -32.0 dB. If you try to raise it higher, a lock icon will
+appear. To raise it higher, click the lock. It will "unlock" and then
+you can raise the slider further. The lock icon will automatically lock
+again after a few seconds.
+Once you have set the input and output levels, click the 
+Proceed to
+Select Sweet Spot
+ button.
+Info
+Note: there will be only two channels shown, even if you have used the Device Console
+to set up routing for a subwoofer. This is because the miniDSP Flex Eight (DL) is a
+stereo
+ Dirac Live processor.
+Therefore, it treats each speaker 
+combined with the subwoofer
+ as a single channel. There is no
+separate Dirac Live channel for the subwoofer.
+Tip
+While the measurement technique used by Dirac Live is quite robust, low-frequency noise (traffic, HVAC, machinery, aircraft, storms) in particular can adversely affect measurement accuracy. A high level of ambient noise can degrade signal to noise ratio and prevent the algorithm from analyzing the test signal properly. Minimize the effect of any external noise, ensure that measurement signal levels are adequate, and/or choose a suitable time for performing measurements.
+Select Sweet Spot
+¶
+The 
+Select Sweet Spot
+ tab selects the type of seating arrangement
+to calibrate for. Each arrangement has a different number of measurement
+positions.
+The menu bar shows the selection choices:
+Use the menu to select the arrangement that is most appropriate for your
+listening area. They are described more below.
+There are no hard and fast rules on which arrangement to use, so feel
+free to experiment by calibrating for more than one arrangement and
+auditioning the results. Up to four different sets of
+correction filters can be loaded into the miniDSP Flex Eight (DL).
+After selecting the seating arrangement, click on the 
+Proceed to
+Measure
+ button.
+Focused
+¶
+This arrangement is best for a single
+listener. There are nine measurement positions:
+Wide
+¶
+This arrangement is optimized for a single
+listener but also caters for additional listeners. There are thirteen
+measurement positions: the same nine as the tightly-focused arrangement, plus an
+additional four positions extending out to the left and right:
+Expanded
+¶
+This arrangement is optimized for multiple
+listeners. There are seventeen measurement positions: the same nine as
+the tightly-focused arrangement, plus an additional eight positions that extend
+the listening area out to the left and right:
+Take your measurements
+¶
+Measurements are performed on the
+Measure
+ tab.
+The left side of the window displays a
+visual guide to the measurement positions. The position that will be
+measured is shown in white. To display the name of a position, hover the
+mouse over it -- the position will be highlighted in blue and its name
+displayed. For example:
+While the visual guide indicates a suitable set of microphone positions,
+these can be varied to suit individual circumstances. It is, however,
+important that the first measurement, named "Main Position." is taken in the
+center of the listening area, as this measurement is used to set the
+level and delay of each channel.
+Run the first measurement
+¶
+Prior to running the first measurement,
+you can optionally set a short delay before the measurement starts. To
+do so, click on the small clock icon on the right side of the 
+Measure
+selected position
+ button and choose the delay:
+With the microphone in the
+center of the listening area, click on 
+Measure selected position
+.
+The miniDSP Flex Eight (DL) will generate a test signal, audible as a
+frequency sweep through the left speaker, then the right, then through the left again.
+Warning
+If your speaker sounds distorted or strained during the measurement,
+click 
+Abort this measurement
+ immediately. Go back to the Volume Calibration
+screen and lower the output volume.
+On completion of a successful measurement, the window will update with a
+graph of the measured frequency response:
+If the measurement is successful, a check mark will be shown on the
+visual guide and the next measurement position will be highlighted.
+If the application indicates that the measurement was not successful,
+you will need to take corrective action. The most common errors are
+related to signal level:
+The measurement signal is too low to ensure a clean capture.
+The measurement signal is too high and the audio signal has exceeded
+    the maximum level (clipping). This is shown in red on the time
+    domain display.
+In either of the above cases, go back to the 
+Volume Calibration
+ tab
+and adjust 
+Master output
+ or 
+Mic gain
+. Then re-run the
+measurement.
+Completing the measurements
+¶
+To take the next measurement, move the microphone to the highlighted
+location -- labeled "Next" on the seating visual -- then click on
+Measure next position
+.
+If the measurement produces an error that the signal was too low or
+high, go back to the 
+Volume Calibration
+ tab and adjust 
+Master
+output
+ or 
+Mic
+gain
+. Return to the Measure tab and then click
+on 
+Remeasure selected position
+. You do not need to redo measurements
+that you have already successfully completed.
+Repeat until all positions have a
+successful measurement:
+Tip
+The measurement positions should be well spread out over the
+entire listening area so that Dirac Live can acquire a good set of
+measurements that capture the acoustic behavior of the room. Typically,
+you should spread the microphone positions over a circle with a diameter
+of at least a meter (three feet) and vary the microphone height from the
+central position by at least 30 cm (one foot) up and down. Placing all
+measurement positions too close to each other may result in
+"over-correction" that will sound dry and dull.
+A different set of measurement positions other than those indicated by
+the visual guide and the above guidelines can be used if necessary. For
+example, if the displayed measurement position doesn't provide acoustic
+"line of sight" from the speaker to the microphone, then adjust the
+measurement position so that it does. The important thing is to ensure
+that the measurement positions are spread out over the whole listening
+area and that the microphone is moved a sufficient distance vertically
+as well as horizontally.
+In some cases, such as when the listening area is very close to the
+loudspeakers or the loudspeakers have a very narrow dispersion pattern,
+the size and in particular the height of the measurement area can be
+reduced, to avoid discrepancies caused by varying output response from
+the speakers themselves.
+Viewing and redoing measurements
+¶
+Click on any completed measurement position to select it and display its
+measured response.
+After selecting a completed measurement,
+the two buttons at the bottom of the screen can be used to re-take the
+measurement or to delete it:
+Once you have completed all measurements, click on the 
+Proceed to
+Filter Design
+ button.
+Filter design
+¶
+The Filter Design screen
+¶
+Once the full set of measurements has successfully been taken,
+Dirac Live
+ has the acoustical information it needs about your
+loudspeakers and listening room to create the correction filters.
+Frequency response display
+¶
+The 
+Filter Design
+ tab shows the
+frequency response of one or two channels and the target curve. The
+following example shows the left channel in mauve and the default target
+in yellow/black:
+Groups
+¶
+There are two channels listed towards the
+top right of the window, in a single group:
+Each group has its own target curve and range curtains. If you wish to have
+different target curves for left and right, you can separate the two
+channels into separate groups. To do this, click on "Left" or
+"Right" and drag it out of the darker box. There will then be two groups, each with its own target curve:
+Range curtains
+¶
+The grey regions to the left and right of the graph are excluded from
+magnitude correction. You can adjust
+the frequency range of correction by dragging the
+"curtains" to either side of the graph. 
+By default, Dirac Live sets the range curtains to the detected range of both speakers.
+Avoid setting the low frequency curtain too low, as this can result in excessive
+boost and increase distortion.
+The high frequency curtain can be set where you like.
+We recommend trying a full-range correction for at least one of your profiles.
+Or, if you are  happy with the inherent
+in-room response at higher
+frequencies, try setting the upper curtain to limit correction to
+the modal region (up to 300 Hz, in a typical room). 
+Display controls
+¶
+There are several controls at the right of
+the graph:
+Spectrum
+Display the average of all magnitude responses. If the "Measured"
+checkbox on the left is on, the average of the uncorrected measurements
+is displayed. If the "Corrected" checkbox on the right is on, the
+average of the response after correction is displayed.
+Group colors
+If checked, the graph colors are the same for all channels in a group.
+This can be individually selected for the measured and corrected
+responses. 
+Spread
+Display the responses
+at all measurement locations as a lighter highlight on the graph. This can be individually selected for the measured and corrected
+responses. This example shows the spread of responses after correction:
+Target curve
+Display the target curve for the current group or groups.
+Curtains
+Display the correction frequency range for the current group or groups. This is
+shown as "curtains" to the left and right of the graph.
+Detected Range
+Display two vertical cursors indicating the frequency range within which Dirac
+Live has determined the speakers of the current group to have reasonable output. Note: at low
+frequencies, environmental noise can cause this estimate to be
+incorrect.
+Zooming in on the graph
+¶
+The graph can be zoomed in and out by
+using the mouse wheel, or with zooming gestures on a touchscreen or touchpad. To
+move a zoomed graph, left-click and drag with the mouse, or use the grab
+and move gesture with a touchscreen. To zoom out to 100%, double-click
+on the graph or right-click and select 
+Reset zoom
+.
+Adjusting the target curve
+¶
+The target curve is the response
+you desire from the speakers after correction. This will be an average of different
+locations around the listening area.
+Using the shelving controls
+¶
+By default, the target curve provides two controls: bass shelf and treble
+roll-off. Simply grab and drag the horizontal lines to move the level of the bass shelf or degree
+of treble roll-off or boost. The bass shelf ranges from 0 to +12 dB, while the treble control
+ranges from -3 to +4 dB.
+Editing with control points
+¶
+If the shelving filters don't provide enough control you can switch to
+using control points with the 
+icons located with each group on the right side of the window:
+The control points are
+shown as dots on the target curve, which can be used to edit the target curve
+as shown here:
+Converting shelving filters to control points
+¶
+The target curve with shelving filters and the target curve with control
+points are stored separately, and you can switch back and forth between them.
+The default target curve with control points is a straight line with a slight downward tilt:
+If you would prefer to start with the same shape as the shelving filters,
+click the icon to view the shelving filter, then right-click on the graph and select
+Convert shelves to control points
+:
+The shape of the target curve with control points will now be the same as the shelving
+filters, and you can edit further as described above:
+Snapshots
+¶
+You can save the current set of groups,
+target curves and curtain frequencies by clicking on the 
+Take
+snapshot
+ button:
+Snapshots will by default be named as the
+current time. They can be renamed for easier selection later on. Click
+on the right side of the button and then on the pencil-shaped icon.
+Enter the name and press the Enter key:
+To select a saved snapshot, click on the right side of the button and
+then click on the desired snapshot.
+To delete a saved snapshot, click on the right side of the button and then click on the
+"x" icon.
+Reset to default
+¶
+To reset a target curve and the range
+curtains to the default, drop down the menu from the hamburger icon and
+select 
+Set default target curve
+, then select the group to reset:
+Saving and loading individual target curves
+¶
+Target curves can be saved and loaded
+individually for use at a later time or in other projects. To save a
+target curve, drop down the menu from the hamburger icon and select
+Save target curve
+, then select the group:
+To load a target curve, drop down the menu
+from the hamburger icon and select 
+Load target curve
+, then select
+the group:
+Guidelines for target curve design
+¶
+Care should be taken to create a target curve that works well with your
+speakers and room, as well as suiting your personal preferences. Small
+changes to the target curve can have significant effects on the tonal
+quality of the system, so it is important that you experiment with
+different target curves.
+If you initially don't achieve a satisfactory result, ensure that you
+have spread your measurements over a sufficiently large area and with
+sufficient variation in height. The following guidelines will help you
+understand how to adjust your target curve.
+Low-frequency extension and boost
+¶
+All loudspeakers have a natural low frequency roll off. Setting the
+target curve to boost the region below the speaker's natural roll off
+frequency 
+may
+ result in overdriving the speakers, especially with
+smaller home loudspeakers and depending on your listening habits. A
+system with capable subwoofers integrated into it, however, will support
+much more low-frequency output.
+High-frequency "tilt"
+¶
+The target curve is the desired measured response of loudspeakers 
+in a
+room,
+ in contrast to measurements made of a loudspeaker during its
+design under anechoic (measured in free space) conditions. While
+high-quality loudspeakers are usually designed for a flat on-axis
+anechoic response, these same speakers when placed into a listening room
+will tend to have a downward-sloping or "tilting" response at high
+frequencies, due to the effects of limited dispersion at high
+frequencies and greater acoustic absorption.
+A completely flat in-room response is therefore usually not desirable
+and will tend to sound thin or bright. Start with a target curve that
+follows the natural behavior of your speakers in your room, and then
+experiment with greater or lesser degrees of tilt in the treble region
+to obtain the most natural timbral balance.
+Low-frequency adjustment
+¶
+A completely flat response at low frequencies, with complete elimination
+of peaks due to room modes, may sound light in the bass. Typically, a
+slight increase in the target curve below 100 Hz will give a more
+balanced sound.
+Magnitude response dips
+¶
+In some cases, it may be helpful to adjust the target curve to follow
+dips in the measured response. This can occur where, for example, the
+listening area is very close to the speakers and the measurements
+exhibit a dip caused by the vertical response of the speakers
+themselves. Experiment with a target curve that follows the dips. You
+may also wish to try a different set of measurement positions.
+The Impulse response graph
+¶
+The Filter Design menu can be used to
+display the impulse response:
+Example impulse response
+¶
+Below is an example impulse response
+display. This example shows the original impulse response at the top and
+the corrected and delayed impulse response below.
+Impulse response controls
+¶
+There are several controls at the right of
+the graph:
+Impulse response
+Display the impulse response corresponding to the average of all
+magnitude responses. If the "Measured" checkbox on the left is on, the
+impulse response corresponding to the measurements is displayed. If the
+"Corrected" checkbox on the right is on, the impulse response
+corresponding to the corrected response is displayed.
+Group colors
+If checked, the graph colors are the same for all channels in a group.
+This can be individually selected for the measured and corrected impulse
+responses.
+Show latency
+Show the corrected impulse responses on a time scale that includes processing delay.
+Separate curves
+Show the measured and corrected responses on separate graphs. See above for an example.
+Dense grid
+Display additional grid lines on the graph.
+Cursors coordinates
+Display a vertical cursor line where the mouse is, together with the
+time delay and impulse response value at the cursor position.
+Exporting filters
+¶
+The 
+Filter
+Export
+ tab
+shows four empty "slots" for filter sets (a filter set is one filter for
+each channel). 
+Export a filter
+¶
+To export a filter into a slot, click on the slot. At the
+right, enter the name and description and click 
+Export filter
+:
+A circular progress indicator will indicate
+that the filter is being downloaded to the miniDSP Flex Eight (DL). When filter export
+is complete, the UI will return to the 
+Measure
+ tab so you can adjust
+the target curve to create a different set of filters. Return to the
+Filter Export
+ tab to view the list of loaded filters:
+Replace a filter
+¶
+To overwrite a filter slot, select a slot
+with a loaded filter and click on 
+Replace existing filter
+.
+Info
+If you have set up any back-end processing (subwoofer, active speaker, etc.), be sure to load the filter into the same slot as the preset selected when running the Dirac Live calibration measurements.
+Delete a filter
+¶
+Hover the mouse over a filter in the sidebar list. A red circled "x" will appear.
+Click on it to delete that filter.
+Switch between filters
+¶
+To audition different filters while still
+running the Dirac Live application, use the filter selection checkboxes
+in the sidebar to choose the filter set to listen to:
+Info
+Selecting a filter here will also select the matching
+preset in the back-end processing set up by miniDSP Device Console.
+Check your device volume
+¶
+NOTICE: Check your device volume
+After you export a filter and quit the Dirac Live app, you must 
+check the volume of your device
+.
+(This is because the Dirac Live app
+may have reduced the device volume as a safety feature.)
+Ended: Dirac Live
+                            AutoEQ 
+↵
+Overview of the AutoEQ feature
+¶
+The AutoEQ feature provides a simple measurement and EQ tool for users who may not wish to learn
+the full feature set of tools such as REW (Room EQ Wizard). Furthermore, it is tightly integrated into Device Console
+to simplify the measurement and EQ process.
+Info
+The AutoEQ feature requires a direct USB connection from your computer
+to the Flex Eight. It cannot be used via the miniDSP Wi-DG (Wifi to USB bridge).
+How AutoEQ works
+¶
+The AutoEQ feature is designed to make it easy to perform an automatic EQ and load the designed filters into
+the miniDSP Flex Eight (DL) via Device Console.
+As such, the interface for measurement and EQ is launched from within the relevant PEQ block. In the
+miniDSP Flex Eight (DL), there are eight locations for parametric EQ, as highlighted in red here:
+Within each parametric EQ block, a simple button opens the AutoEQ screen 
+for that block
+:
+The AutoEQ feature uses REW (Room EQ Wizard) running as a background task to perform its
+measurements and calculations. However, the normal REW user interface does not
+appear; instead, a new screen in Device Console replaces it.
+Installation and activation
+¶
+Info
+AutoEQ is an optional upgrade. It can be used only if the upgrade has been purchased
+and activated, as described below.
+Install or update REW
+¶
+AutoEQ uses REW in the background to perform its measurements and calculations. REW must
+therefore be installed on your computer.
+Currently, V5.40 
+beta
+ of REW is required.
+Use this link to take you to the download
+site, where you can click on the link for your platform to download the latest version:
+REW API beta releases
+After downloading, double-click to install. We recommend accepting the default installation
+settings. You do not need to run REW at the end of the installation procedure.
+Info
+If you install REW in a non-standard location, you will need to use the 
+API
+Options
+ dialog to tell Device Console about the installed location. See 
+If REW fails to start
+.
+1. Purchase the AutoEQ upgrade
+¶
+Warning
+The AutoEQ upgrade applies 
+per device
+. It will work only on the device that you are connected
+to at the time you purchase the upgrade.
+Connect to your Flex Eight using Device Console. Open any of the PEQ
+blocks and click the  
+AUTOEQ UPGRADE
+ button:
+The upgrade window will open:
+The upgrade is a two-step process: 1. purchase; 2. activate.
+Click on 
+BUY UPGRADE
+. A browser window will open on stripe.com. Enter your payment
+details and click 
+Pay
+. You will be redirected to an acknowledgement screen, and
+also receive a receipt by email.
+Info
+After you press the 
+Buy Upgrade
+ button, Device Console will wait for an acknowledgement
+from the payment system.
+If you decide not to proceed with the upgrade, click the back-arrow button near the top left
+of the purchase screen. Here is an example:
+If you just close the payment window, Device Console will wait 30 minutes for the acknowledgement; in that case, quit and restart the Device Console application.
+2. Activate the AutoEQ upgrade
+¶
+After payment completes, return to the miniDSP Device Console window. You will see acknowledgement of successful payment:
+Click OK to return to the upgrade screen:
+Click on 
+RETRIEVE KEY ONLINE
+ to retrieve the activation key. Then click 
+ACTIVATE
+ to activate the upgrade on your Flex Eight.
+Tip
+Retrieving the activation key online requires an active Internet connection. If you have a device
+that needs to be activated while offline, save the activation key file that was attached to the purchase acknowledgement email onto a USB stick. On the device to be activated, click 
+LOAD FROM FILE
+ and select the file from the USB stick.
+After activating, the Flex Eight will restart.
+First steps
+¶
+Download your microphone calibration files
+¶
+Each UMIK-1 and UMIK-2 measurement microphone is individually calibrated to
+ensure accuracy. To download the unique calibration files for your
+microphone, go to the
+UMIK-1 page
+or the
+UMIK-2 page
+.
+Enter your microphone's serial number. It is in the form xxx-yyyy and
+labelled on the microphone.
+Two calibration files are downloaded:
+The regular or "on axis" calibration file will be saved to the
+    computer with a name that is the same as the serial number e.g.
+    "7001870.txt". This is the one that you should use when pointing the
+    microphone towards the speakers.
+The second calibration file has "_90deg" in the name e.g.
+    "7001870_90deg.txt." This corrects the frequency response when the
+    microphone is oriented at 90 degrees to the sound source, such as
+    when pointing the microphone towards the ceiling.
+Start AutoEQ
+¶
+To start the measurement/EQ process, open a PEQ block. This is the block where filters
+from the autoEQ process will be loaded. Once in the PEQ window, click on the AUTOEQ button near the top right
+of the window:
+Device Console will start REW in the background. This takes a short time, but status messages will show the background activity.
+If REW fails to start
+¶
+If REW fails to start, you will see an error message like this:
+This is most likely because REW has not been installed in the
+default location. To correct it, click on 
+API Options
+. Here are the
+default settings:
+AutoEQ API options on macOS
+AutoEQ API options on Windows
+Next to REW Path, click on 
+CHANGE
+ and use the file selector dialog to select the correct location.
+Then click 
+RESTART REW
+.
+macOS notes
+¶
+On macOS, you may be asked to approve access to the microphone by miniDSP Device Console:
+Click on 
+Allow
+.
+You can check microphone access in System Settings. Click on 
+Privacy & Security
+ and scroll
+down to 
+Microphone
+. Click on it  and check that miniDSP Device Console is in the list and has microphone
+access:
+Windows notes
+¶
+If you get error messages that REW is unable to access the
+microphone or that there is no audio input, check that you have not
+disabled REW's access to the microphone.
+Open the Windows Settings and select
+Privacy & security, then scroll down and select Microphone. Check that "Microphone access" and "Let apps access
+your microphone" is turned on.
+Scroll down and check that "Let desktop apps access your microphone" is also turned on, and that
+REW is listed in the applications that are allowed to access the microphone:
+Check input/output devices
+¶
+Once AutoEQ loads, you will be presented with this screen:
+Confirm that the correct input and output devices are selected. This should be the UMIK-1 or UMIK-2 for the input device,
+and the Flex Eight for the output device.
+If they are not, click on the downward-facing arrow to the right of each label and select the desired device.
+For example, this is a typical input selection dialog on Windows:
+Select the desired device and click 
+OK
+.
+EXCL devices (Windows only)
+¶
+On Windows, "EXCL" devices are used to give the application exclusive access to that
+device. They use the WASAPI exclusive access mode, whereas devices not prefixed
+by EXCL use JavaSound's built-in access.
+Either version can be chosen. The EXCL devices will have higher resolution (Javasound is
+limited to 16 bits), but this is not
+important for acoustic frequency response measurements. In infrequent cases, selecting
+an EXCL device can cause issues; if this occurs, switch to the non-EXCL version.
+Note that, for an EXCL version of a device to appear, the option "Allow applications to take exclusive
+control of this device" must be selected. This can be found in the Windows Control Panel:
+choose Manage Audio Devices, select the device from either Playback or Recording,
+click Properties, then choose the Advanced tab:
+Tip
+If you experience issues, check that the input and output devices (i.e. Flex Eight and UMIK-1/2)
+are 
+not
+ set as the default input and output devices in Windows. If the devices allow exclusive access, this
+may prevent REW from being able to use the device.
+Load calibration file
+¶
+If you have not previously used the AutoEQ interface, load your UMIK-1/2 calibration file:
+Click on the 
+INPUT CAL FILE
+ button.
+Locate your UMIK-1 calibration file in the file system and select
+    it. The calibration file name will then be displayed:
+Note: If you have used the AutoEQ interface before, the calibration file will already be loaded and you
+do not need to repeat this step.
+Tip
+Although the screenshot above shows the calibration file in the Downloads folder, we recommend that you
+move your calibration files to a "safe" location in your file system. Be sure also to include them in your computer backups
+and to transfer them when you change computers. 
+Set Measurement Sweep Frequency
+¶
+Use the dropdown menu to select the measurement sweep frequency range:
+This setting should be chosen to match the type of speaker that you are measuring. Note that it affects
+both the range of pink noise that will be used for the levels check, and the range of frequencies
+swept when performing subsequent measurements.
+Check levels
+¶
+The next step is to check the audio levels for measurement.
+Click the switch labeled "Check Levels". The master volume will be set to -60 dB and the test signal will start at -20 dB FS.
+Adjust the master volume and the generator level if necessary to increase the volume
+to a moderate level, such that your voice would have to be raised to converse with someone sitting next to you.
+The icons below will flash above the meter to indicate whether the microphone is receiving sufficient level:
+Click the switch labeled "Check Levels" again to turn the test tone off.
+The buttons MEASURE-ONLY and MEASURE-EQ will now be enabled. They are described on the next two pages.
+Measure
+¶
+To run a basic measurement 
+without
+ AutoEQ, click the MEASURE-ONLY button.
+Measurement overview
+¶
+When the MEASURE-ONLY button is pressed, Device Console will start a measurement sweep.
+The grey bar underneath the "REW AutoEQ" label functions
+as a progress bar, and will progress from left to right twice: once when setting up the measurement
+and once when running the measurement. (Audio will be produced only on the second.)
+When the measurement is done, Device Console will display the result as two graphs: the
+magnitude response and the impulse response. Here is an example measurement of a subwoofer:
+Adjusting graph scale
+¶
+The frequency range (horizontal scale) can be adjusted to give the most useful view of the displayed data.
+To pan the graph left and right, click on the graph and drag to the left or right while holding the mouse button down.
+To adjust the scale of the graph, enable the Zoom button at the top right. Then use the mouse wheel (or trackpad) to zoom in and out of the graph.
+Note that the Zoom button is disabled by default. When disabled, the mouse wheel (or trackpad) can be used to scroll the page up and down.
+Usage of the MEASURE-ONLY tab
+¶
+When using the MEASURE-ONLY screen, 
+all PEQ filters are active
+. Therefore, the measurement
+shows the response as it will be when using the Flex Eight normally.
+Typical ways to use this tab are therefore:
+Before running AutoEQ, run a measurement on this screen in order to see your starting point.
+After
+ running and applying AutoEQ, run a measurement on this screen to see the effect of the EQ.
+The graph shown above is case (1). This next graph is case (2), a measurement after
+applying AutoEQ as described on the next page:
+Measure and EQ
+¶
+To run a measurement and then apply EQ to correct the measured response, click
+the MEASURE-EQ button.
+AutoEQ overview
+¶
+When the MEASURE-EQ button is pressed, Device Console will start a measurement sweep.
+The grey bar underneath the "REW AutoEQ" label functions
+as a progress bar, and will progress from left to right twice: once when setting up the measurement
+and once when running the measurement. (Audio will be produced only on the second.)
+When the measurement is done, REW will then calculate a correction EQ based on the
+measurement and display the result. An example result is shown below. For this graph, we
+have enabled the 
+Zoom
+ switch (near the top right).
+While running this measurement, Device Console will 
+disable all filters in that PEQ block
+.
+The measurement therefore does not include those filters, so that the AutoEQ can generate a new
+set of filters to replace them.
+Note also that the display that you see
+will depend on various parameters that you may have set on previous runs, which are described
+further below.
+Info
+Because Device Console will disable any existing filters in the PEQ block while it is running the measurement,
+you do not have to clear them first. The idea is that your new EQ will 
+replace
+ the existing EQ.
+Note, however, that all filters in 
+other
+ PEQ blocks, as well as crossover filters, will still be active.
+Adjusting graph scale
+¶
+The frequency range (horizontal scale) can be adjusted to give the most useful view of the displayed data.
+To pan the graph left and right, click on the graph and drag to the left or right while holding the mouse button down.
+To adjust the scale of the graph, enable the Zoom button at the top right. Then use the mouse wheel (or trackpad) to zoom in and out of the graph.
+Note that the Zoom button is disabled by default. When disabled, the mouse wheel (or trackpad) can be used to scroll the page up and down.
+Auto-Match or manual EQ
+¶
+By default, Device Console recalculates the target level and the EQ whenever a new measurement
+is taken or any of the parameters below are changed. To disable this, turn off the Auto-Match switch
+in the top menu:
+Then, when you are ready, click the 
+MATCH TARGET
+ button to re-calculate the EQ.
+Adjusting AutoEQ settings
+¶
+There are a number of settings that you can change to adjust the AutoEQ to suit your system and needs. These
+are arranged on the left of the main graph.
+Target Type and filters
+¶
+The Target Type selects high and low pass filters that modify the target curve away from flat.
+This is an example of these settings in the left sidebar:
+Target Type
+¶
+Click on 
+Type
+ to open a dialog with five target types:
+Each type has zero, one, or two high pass and low pass filters, as summarized in the table below.
+Target type
+High pass filter (default)
+Low pass filter (default)
+Full range speaker
+10 Hz
+—
+Subwoofer
+10 Hz
+80 Hz
+Bass limited speaker
+80 Hz
+—
+Speaker driver
+100 Hz
+1000 Hz
+None
+—
+—
+Tip
+These filters apply to the 
+target curve
+ only. They do 
+not
+ affect the audio processing.
+For more details on target types and their filters, see 
+Tips and Guidelines
+.
+Target filters
+¶
+To adjust the target filters, click on the filter parameters to the left of the main graph. An
+overlay will pop up where the filter frequency, type, and slope can be selected. These examples
+illustrate the two most common types:
+Clicking on the dropdown selector will display the selection of slopes. For the low-frequency and bass management filter, 
+these are all 
+Butterworth
+ filter slopes:
+For the high pass and low pass crossovers of the 
+Speaker Driver
+ type, 
+a full selection of filter types is available:
+Saving the target type and filter settings
+¶
+Click on 
+Save
+ to store the target type and filter settings. These will then be used by default
+the next time AutoEQ is run.
+House curve
+¶
+A file containing a sequence of response points can be loaded to define a 
+house curve
+.
+Click on the 
+H. Curve
+ label in the left sidebar to open the house curve overlay, then click
+on 
+CHANGE
+ to select a house curve file:
+For more information, see the 
+REW House Curve
+ documentation.
+Note that the house curve does not affect the high pass and low pass filters that
+are defined according to Target Type.
+Target Level
+¶
+The target level is the flat region of the target line, shown in red on the response graph.
+If the Auto-Match switch is on, the target level will be calculated based on the
+measured response.
+If you wish to manually change the target level, click on 
+Level
+ in the left sidebar.
+The level adjustment window will appear:
+To manually adjust the target level, click on or drag the vertical slider.
+To have REW recalculate the target level based on the measurement, click 
+Calc
+. (This
+option is available only if Auto-Match is 
+off
+.)
+To save the current target level as the default level, click 
+Save
+.
+Match Range
+¶
+The match range is the range over which REW will calculate the EQ filters.
+This range is indicated by the white area on the frequency response graph,
+with the grey area excluded (more or less) from correction.
+To adjust the match range, click on 
+Range
+ in the left sidebar to bring up the range slider:
+The upper and lower frequencies can be changed by dragging the endpoints, or
+by clicking on a numeric value and typing a new value.
+Once the focus is on a value, the up and down arrows can be used to increment and decrement the frequency.
+View filters
+¶
+The details of the
+filters that REW calculated can be viewed at the bottom of the screen:
+Managing measurements
+¶
+Several buttons at the bottom of the window help in managing your measurements:
+In the above example, the measurement was automatically assigned the name "L Jun 9".
+NAME
+Click to change the name of the measurement.
+NOTES
+Click to add a note to the measurement.
+SAVE
+Click to save the measurement to the file system.
+LOAD
+Click to load a measurement from a file.
+Apply the EQ
+¶
+Once you are satisfied with the EQ, click on the 
+APPLY
+ button:
+The EQ filters will be loaded into the PEQ block.
+The effect of the EQ filters can be verified with the MEASURE-ONLY button. For example, this is a
+measurement of the subwoofer after applying the EQ (also shown on 
+Measure page
+):
+You can now close the AutoEQ window. The EQ filters will be displayed on the main PEQ page:
+Tips and guidelines
+¶
+This page contains tips and guidelines for use of the AutoEQ feature.
+Target type
+¶
+The Target Type selection controls the high pass and low pass filters present in the target curve.
+It does not directly affect the audio processing in the miniDSP Flex Eight (DL).
+This setting is used so that REW can match the EQ to existing crossover filters in the signal chain.
+For example:
+Crossover filters that are set in the Flex Eight, on the same channel that you are
+performing AutoEQ on.
+A lowpass filter implemented in the bass management of an A/V receiver or processor, when using
+the Flex Eight to control one or more subwoofers.
+The lowpass filter implemented in a powered subwoofer.
+Two usage scenarios
+¶
+Depending on your needs, you can use the AutoEQ feature in one of two ways:
+Crossover then EQ
+The crossover is added into the signal chain first. Then, use the appropriate Target Type
+and set the filters used by AutoEQ to match the crossover filters that you have set in the
+signal chain.
+EQ then crossover
+The EQ is done first, usually to a flat target. Then the crossovers in the signal chain
+are enabled. In this case, use the "None" target type.
+If the crossovers are being implemented in the Flex Eight, the second usage scenario
+(EQ then crossover) can be
+more flexible, as it is easier to change or adjust crossover frequencies later (that is, there is no
+need to run another autoEQ if you change the crossover).
+Target type details
+¶
+Full range speaker
+This type adds a high pass filter to the target curve. This is typically used for one of two purposes:
+To protect the speaker from excessive low-frequency energy, or
+To match the measured in-room response to the default natural frequency and
+slope of the speaker.
+Subwoofer
+This type adds low pass and high pass filters to the target curve.
+The low pass filter (named "LF" in the UI) is used to protect the subwoofer from excessive low-frequency energy.
+The high pass filter (named "BM" in the UI) is used to match the subwoofer's in-room response
+   to a bass management crossover that has been set in the Flex Eight or further upstream
+   in, for example, and AVR (depending on the application).
+Bass limited speaker
+This type adds a high pass filter to the target curve (named "BM" in the UI). This is typically used when the speaker
+is being crossed over to a subwoofer.
+Speaker driver
+This type adds low pass and high pass filters to the target curve, and is typically used when
+equalizing a single speaker driver. This is intended for 
+advanced
+ users only.
+Typically, the filters will be set to the same frequency and slope as set in the
+crossover blocks.
+None
+The target curve does not have a high pass or low pass filter added.
+Ended: AutoEQ
+                            Additional Information 
+↵
+IMPORTANT INFORMATION
+¶
+DISCLAIMER/WARNING
+¶
+miniDSP cannot be held responsible for any damage that may result from the improper use or incorrect configuration of this product. Please read this manual carefully to ensure that you fully understand how to operate and use this product, as incorrect use or use beyond the parameters and ways recommended in this manual have the potential to cause damage to your audio system.
+Please also note that many of the questions we receive at the technical support department are already answered in this User Manual and in the online application notes on the miniDSP.com website. So please take the time to carefully read this user manual and the online technical documentation. And if an issue arises with your unit, please read through the Troubleshooting section first. Thank you for your understanding!
+WARRANTY TERMS
+¶
+miniDSP Ltd warrants this product to be free from defects in materials and workmanship for a period of one year from the invoice date. Our warranty does not cover failure of the product due to incorrect connection or installation, improper or undocumented use, unauthorized servicing, modification or alteration of the unit in any way, or any usage outside of that recommended in this manual. If in doubt, contact miniDSP prior to use.
+FCC CLASS B STATEMENT
+¶
+This device complies with Part 15 of the FCC Rules. Operation is subject to the following two conditions:
+This device may not cause harmful interference.
+This device must accept any interference received, including interference that may cause undesired operation.
+Warning
+: This equipment has been tested and found to comply with the limits for a Class B digital device, pursuant to Part 15 of the FCC Rules. These limits are designed to provide reasonable protection. This equipment generates, uses and can radiate radio frequency energy and, if not installed and used in accordance with the instructions, may cause interference to radio communications. However, there is no guarantee that interference will not occur in a particular installation. If this equipment does cause harmful interference to radio or television reception, which can be determined by turning the equipment off and on, the user is encouraged to try to correct the interference by one or more of the following measures:
+Reorient or relocate the receiving antenna.
+Increase the separation between the equipment and receiver.
+Connect the equipment into an outlet on a circuit different from that to which the receiver is connected.
+Consult the dealer or an experienced radio/TV technician for help.
+Notice
+: Shielded interface cable must be used in order to comply with emission limits.
+Notice
+: Changes or modification not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
+CE MARK STATEMENT
+¶
+The miniDSP Flex Eight (DL) has passed the test performed according to European Standard EN 55022 Class B.
+Troubleshooting
+¶
+No sound during playback
+¶
+The most common issues
+¶
+The most common reasons for the "no sound" tickets we receive at the miniDSP
+Support department are the following.
+Master volume
+¶
+Check that the master volume control is set to a reasonable level. The master volume can be reset by the Dirac Live app or by AutoEQ, so it's important
+to check the master volume again after using either of them.
+This is too low for normal listening:
+This is more realistic for normal listening:
+Mute
+¶
+Check that mute is not on.
+Other common issues
+¶
+If the above doesn't produce sound, check these items next.
+Input source
+¶
+Check that you have the correct input source selected, for example:
+You should now see level on the input meters:
+If there is no signal level on the input meters, go to the 
+detailed checklist
+.
+If there is signal level on the input meters but still no sound, go to the next step.
+Signal routing
+¶
+If there is signal on the input meters but none on the output meters, check
+your signal routing. For example, this is the default "straight through" routing:
+You should now see level on the output meters:
+Check your master volume and mute again
+, and you should have sound.
+If not, go to the 
+detailed checklist
+.
+Detailed checklist
+¶
+If the above basic checks don't result in sound, work through the following items in order.
+Be sure to 
+check every single item
+.
+Info
+The checkboxes are not persistent. That is, they will be unchecked if you navigate away from this page
+and back again. They are simply there to help you make sure you get every one of them.
+0. Preparation
+¶
+Turn off
+ your amplification
+until you get to the step that says to turn it on.
+ If you have the Dirac Live app open, quit it
+and return to miniDSP Device Console.
+ Use the remote control or front panel knob
+to turn down the master volume.
+1. Check the input meters
+¶
+ Play a music signal, or pink noise from the REW signal generator.
+ Check that the input meters have signal.
+If there is no signal on the input meters:
+ If the source has a volume control, check that its volume is turned up.
+ If the source has multiple outputs that can be selected, check that the correct output is selected.
+ Check that the cables connected to the source outputs are plugged into the correct output plugs.
+ Check that the cables connected to the Flex Eight inputs are plugged into the correct input plugs. Be sure to check the actual numbering on the rear panel.
+ Check that you have the correct input source selected on the Flex Eight.
+2. Check the output meters
+¶
+If there is signal on the input meters but no signal on the output meters:
+ Turn up the master volume control. (This is needed because
+the output meters show the level 
+after
+ volume adjustment. Make sure your amps are turned off.)
+ Check that the Flex Eight is not muted.
+ Check your Routing and make sure that you are routing the inputs through to the connected outputs.
+ Check your crossover settings. (For example, if you have a high pass crossover filter but
+are generating a subwoofer-frequency test signal, there will be  no output signal.)
+C. Check output connections
+¶
+If you have signal on the output meters:
+ Turn the master volume down.
+ Turn your amplification back on.
+ Gradually turn up the master volume.
+If there is still no sound:
+ Turn your amplification off again.
+ Check that the cables connected to the Flex Eight outputs are plugged into the correct output plugs. Be sure to check the actual numbering on the rear panel.
+ Check that the cables connected to the amplifier inputs are plugged into the correct input plugs.
+ Turn your amplification back on.
+ Check that amplifier(s) are not muted or turned down.
+Some outputs produce sound and some do not
+¶
+If some outputs produce sound and some don't, check your routing and all of your crossover settings.
+ For example, in a multi-subwoofer configuration, some outputs will not
+produce sound if there are high pass filters active.
+Strange soundstage
+¶
+If the soundstage width is narrow, check that you have not summed
+left and right input channels and routed the sum to left and right
+speakers. This will result in a mono signal and hence a narrow
+soundstage.
+If the soundstage is "weird", check the routing and crossover settings
+and make sure that left and right channels are consistent.
+If you are
+implementing an active speaker, double-check that every output goes to the 
+correct driver. This can be done by playing a test signal (music or pink noise) at
+low volume, muting all outputs, then unmuting each output one at a time.
+USB-related issues
+¶
+A poor or marginal USB connection can cause various issues, such as:
+Inability to detect a connected device
+Failure to complete a firmware upgrade
+If you experience this type of issue:
+Try a different USB cable. (Note that a marginal cable can work normally but fail to complete
+a firmware upgrade, for example.)
+If you are using a long USB cable, replace it with a short cable. If you need a long length
+after testing with a short cable, use an 
+active
+ USB cable extension.
+Try a different USB port on your computer.
+If you have any hubs or extensions between the Flex Eight and your computer,
+try removing them.
+Network access errors (macOS Sequoia and later)
+¶
+If you get an error message such as "Failure searching for devices" or other network access errors, it may be because you have not enabled local network access for Device Console.
+To check and correct this, open System Settings, scroll down on the left sidebar and select 
+Privacy & Security
+, then scroll down on the right and click on 
+Local Network
+. If miniDSP Device Console is not enabled, enable it here:
+Dirac Live-related audio issues
+¶
+No sound during volume calibration
+¶
+If you get no sound while on the Measurement Levels tab of Dirac Live,
+first make sure that you increase the volume slider in the UI (the
+leftmost one).
+If there is still no sound, quit Dirac Live and return to Device Console. Then
+work through the steps in the 
+No sound during playback
+section above.
+Distorted sound during playback
+¶
+If audio playback is distorted, you may have too much gain internal to
+the DSP. Dirac Live can apply up to 10 dB of gain, so the output level
+should be kept lower than -10 dB to 
+guarantee
+ that there is no
+distortion with a full-scale input signal.
+This issue typically occurs when volume control is being done downstream
+of the miniDSP processor. If so, set the processor master volume at -10
+dB, and then use the downstream equipment to control volume.
+Dirac Live-related connectivity issues
+¶
+Tip
+If you are experiencing any connectivity issues, the 
+first thing
+ to
+do is double-check that the Dirac Live application, the miniDSP Device Console
+and your processor's firmware are up to date.
+No Internet connection
+¶
+Various components of the software require an Internet connection. In
+particular:
+The Dirac Live application may refuse to generate filters or reload
+    saved projects if it cannot connect to the Dirac Research servers.
+In the event that the software is not operating correctly, check that
+your computer is connected to the Internet and try again.
+Failure searching for devices (macOS Sequoia and later)
+¶
+If, when starting Dirac Live from Device Console, you receive the error message "Failure searching for devices", it may be because you have not enabled local network access for Device Console.
+To resolve this, see 
+Network access errors (macOS Sequoia and later)
+ above.
+The miniDSP Flex Eight (DL) is not detected by Dirac Live
+¶
+If the Dirac Live application does not find the miniDSP Flex Eight (DL) when you
+start it, work through the following to identify the issue.
+Anti-virus conflict
+¶
+Some anti-virus software can interfere with communication between Dirac Live
+and the processor. Follow these steps:
+Disable your anti-virus software and restart
+Device Console and Dirac Live.
+If Dirac Live is now able to detect the Flex Eight, check the documentation
+for your anti-virus to see if there's a way to allow Dirac Live full access to
+the Internet.
+Otherwise, you may need to disable your anti-virus temporarily when running
+Dirac Live with the Flex Eight.
+Note
+Some anti-virus software includes a built-in firewall component. This firewall
+may be the cause of the issue, so be sure to check for the presence of a separate
+firewall installed with the anti-virus software.
+Port conflict
+¶
+The Dirac Live application use network ports 11113, 11115, 11117, 5000,
+and 8080. The last two in particular are needed for the bridging app to
+communicate between Dirac Live and the miniDSP processor.
+If the miniDSP processor is not detected:
+Double-check the USB cabling from your computer to the processor. If
+    you are using extenders or hubs, remove them and make a short direct
+    connection. Try different USB ports on your computer.
+Check that your computer's firewall isn't blocking any of the ports
+    listed above.
+Check that other applications aren't using these ports.
+a.  On Windows 10, open a command prompt and type the following
+    commands:
+netstat -ano | findstr 8080
+netstat -ano | findstr 5000
+b.  On macOS, open Terminal and type the following commands:
+sudo lsof -n -i4TCP:8080 | grep LISTEN
+sudo lsof -n -i4TCP:5000 | grep LISTEN
+If there is no output, the ports are not in use. If there is output,
+then try to close the application that is using them. Typically,
+software that provides a local web server is likely to be the one
+blocking port 8080.
+Unpaired devices (Windows 10)
+¶
+Some customers have reported that changing
+the following setting enabled Dirac Live to find their processor. Go to
+Settings -> Privacy -> Other Devices and enable "Communicate with
+unpaired devices."
+Obtaining support
+¶
+If you are experiencing issues with your miniDSP Flex Eight (DL) that are not resolved by this manual
+and by following the troubleshooting steps above:
+Check the 
+miniDSP community forum
+ to see if this issue has already
+    been raised and a solution provided.
+Contact miniDSP via the support portal at
+support.minidsp.com
+ with:
+a.  A clear explanation of the symptoms you are seeing.
+b.  A description of troubleshooting performed and your results.
+c.  The firmware versions obtained from the Display Versions button in Device Console.
+d. (Recommended) For quickest resolution of your issue, include the current program snapshot.
+This can be obtained from the 
+Device Console Settings
+ screen.
+Ended: Additional Information
+  Back to top
+List of all miniDSP manuals
+Open-source licenses
+        Version 1.2.4.16
+      Copyright © 2022–2026 miniDSP Ltd
+    Made with
+      Material for MkDocs

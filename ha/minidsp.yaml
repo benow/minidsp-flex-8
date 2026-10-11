@@ -1,0 +1,353 @@
+# miniDSP Flex Eight — Home Assistant package (SNAPSHOT)
+# Canonical copy: nastv repo deploy/ha/packages/minidsp.yaml (deploy recipe: docs/home-assistant.md)
+# Synced from live: 2026-10-11
+# MiniDSP Flex 8 control — docs/plans/music-minidsp-ha.md W3 (built 2026-10-10)
+# Daemon: http://192.168.0.146:5380 (rvpi, minidsp-rs 0.1.12, LAN-only, no auth)
+# Writes: POST /devices/0/config {"master_status":{...}} (partial merge).
+# Volume clamped here to -80…0 — the DEVICE silently clamps to -127.5, we clamp sanely.
+# NOTE: Andy's "preset 1" = device index 0; "preset 2" (nighttime, sub off) = index 1
+#       — to be created in the official miniDSP app; see late_night_listening placeholder.
+
+rest:
+  - resource: http://192.168.0.146:5380/devices/0
+    scan_interval: 2
+    sensor:
+      - name: MiniDSP Master
+        unique_id: minidsp_master
+        value_template: "{{ value_json.master.volume }}"
+        json_attributes_path: "$.master"
+        json_attributes:
+          - preset
+          - source
+          - mute
+
+rest_command:
+  minidsp_volume:
+    url: http://192.168.0.146:5380/devices/0/config
+    method: post
+    content_type: application/json
+    payload: '{"master_status":{"volume":{{ volume_db }}}}'
+  minidsp_mute:
+    url: http://192.168.0.146:5380/devices/0/config
+    method: post
+    content_type: application/json
+    payload: '{"master_status":{"mute":{{ mute_state }}}}'
+  minidsp_source:
+    url: http://192.168.0.146:5380/devices/0/config
+    method: post
+    content_type: application/json
+    payload: '{"master_status":{"source":"{{ source_name }}"}}'
+  minidsp_preset:
+    url: http://192.168.0.146:5380/devices/0/config
+    method: post
+    content_type: application/json
+    payload: '{"master_status":{"preset":{{ preset_index }}}}'
+
+input_number:
+  music_level:
+    name: Music listening level
+    min: -80
+    max: 0
+    step: 0.5
+    unit_of_measurement: dB
+    icon: mdi:music-note
+  tv_level:
+    name: TV listening level
+    min: -80
+    max: 0
+    step: 0.5
+    unit_of_measurement: dB
+    icon: mdi:television
+  iem_level:
+    name: IEM listening level
+    min: -80
+    max: 0
+    step: 0.5
+    unit_of_measurement: dB
+    icon: mdi:headphones
+  bluetooth_level:
+    name: Bluetooth listening level
+    min: -80
+    max: 0
+    step: 0.5
+    unit_of_measurement: dB
+    icon: mdi:bluetooth-audio
+
+template:
+  - number:
+      - name: MiniDSP Volume
+        unique_id: minidsp_volume
+        min: -80
+        max: 0
+        step: 0.5
+        unit_of_measurement: dB
+        icon: mdi:volume-high
+        state: "{{ states('sensor.minidsp_master') | float(-31.5) }}"
+        set_value:
+          action: rest_command.minidsp_volume
+          data:
+            volume_db: "{{ value }}"
+  - switch:
+      - name: MiniDSP Mute
+        unique_id: minidsp_mute
+        icon: mdi:volume-mute
+        state: "{{ 'on' if state_attr('sensor.minidsp_master', 'mute') else 'off' }}"
+        turn_on:
+          action: rest_command.minidsp_mute
+          data:
+            mute_state: "true"
+        turn_off:
+          action: rest_command.minidsp_mute
+          data:
+            mute_state: "false"
+  - select:
+      - name: MiniDSP Source
+        unique_id: minidsp_source
+        icon: mdi:swap-horizontal
+        options: "{{ ['Usb', 'Toslink', 'Spdif', 'Bluetooth', 'NotInstalled'] }}"
+        state: "{{ state_attr('sensor.minidsp_master', 'source') }}"
+        select_option:
+          action: rest_command.minidsp_source
+          data:
+            source_name: "{{ option }}"
+
+# Widget surface: SCRIPTS, not automations or buttons — the Android Action widget lists
+# ACTIONS, and scripts are the only wrapper that surfaces as its own action (the pattern
+# of script.retailVolumeUp). Thin wrappers: the clamp logic stays in the automations.
+script:
+  minidsp_volume_up:
+    alias: MiniDSP volume up
+    icon: mdi:volume-plus
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_volume_up
+  minidsp_volume_down:
+    alias: MiniDSP volume down
+    icon: mdi:volume-minus
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_volume_down
+  minidsp_input_usb:
+    alias: MiniDSP input USB
+    icon: mdi:usb
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_input_usb
+  minidsp_input_toslink:
+    alias: MiniDSP input TOSLINK
+    icon: mdi:television
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_input_toslink
+  minidsp_input_bluetooth:
+    alias: MiniDSP input BLUETOOTH
+    icon: mdi:bluetooth-audio
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_input_bluetooth
+  minidsp_input_spdif:
+    alias: MiniDSP input SPDIF
+    icon: mdi:audio-input-rca
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_input_spdif
+  late_night_listening:
+    alias: Late night listening
+    icon: mdi:weather-night
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.late_night_listening
+  daytime_listening:
+    alias: Daytime listening
+    icon: mdi:weather-sunny
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.daytime_listening
+
+automation:
+  - id: minidsp_volume_up
+    alias: MiniDSP volume up
+    description: "+3 dB on the Flex, clamped to the sane range"
+    triggers: []
+    conditions: []
+    actions:
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: >
+            {% set v = states('sensor.minidsp_master') | float(-31.5) %}
+            {{ [[ (v + 3) | round(1), 0 ] | min, -80 ] | max }}
+    mode: single
+  - id: minidsp_volume_down
+    alias: MiniDSP volume down
+    description: "-3 dB on the Flex, clamped to the sane range"
+    triggers: []
+    conditions: []
+    actions:
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: >
+            {% set v = states('sensor.minidsp_master') | float(-31.5) %}
+            {{ [[ (v - 3) | round(1), 0 ] | min, -80 ] | max }}
+    mode: single
+  - id: minidsp_input_usb
+    alias: MiniDSP input USB
+    description: "Select the Flex USB input (Pi playback) and set the music level"
+    triggers: []
+    conditions: []
+    actions:
+      - action: select.select_option
+        target:
+          entity_id: select.minidsp_source
+        data:
+          option: Usb
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: "{{ states('input_number.music_level') }}"
+    mode: single
+  - id: minidsp_input_toslink
+    alias: MiniDSP input TOSLINK
+    description: "Select the Flex TOSLINK input (TV optical) and set the TV level"
+    triggers: []
+    conditions: []
+    actions:
+      - action: select.select_option
+        target:
+          entity_id: select.minidsp_source
+        data:
+          option: Toslink
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: "{{ states('input_number.tv_level') }}"
+    mode: single
+  - id: minidsp_input_bluetooth
+    alias: MiniDSP input BLUETOOTH
+    description: >
+      Select the Flex BLUETOOTH input and set the Bluetooth level (own helper:
+      the BT input runs ~10 dB quieter than USB with phone absolute-volume at max;
+      raise bluetooth_level, or better, apply the per-source Input Volume Offset
+      in Device Console's Audio Source Configuration — the designed fix). Verified
+      latching 2026-10-10 even with the source disabled in Device Console — that
+      disable only removes Bluetooth from the front-panel/remote cycle list, not
+      from digital source writes.
+    triggers: []
+    conditions: []
+    actions:
+      - action: select.select_option
+        target:
+          entity_id: select.minidsp_source
+        data:
+          option: Bluetooth
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: "{{ states('input_number.bluetooth_level') }}"
+    mode: single
+  - id: minidsp_input_spdif
+    alias: MiniDSP input SPDIF
+    description: >
+      Select the Flex SPDIF coaxial input and set the music level (same volume
+      parameters as USB). Fourth and last Flex Eight input (USB, TOSLINK, SPDIF,
+      BLUETOOTH) — currently nothing physically wired to the coax port.
+    triggers: []
+    conditions: []
+    actions:
+      - action: select.select_option
+        target:
+          entity_id: select.minidsp_source
+        data:
+          option: Spdif
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: "{{ states('input_number.music_level') }}"
+    mode: single
+  - id: late_night_listening
+    alias: Late night listening
+    description: >
+      Headphones (7Hz Timeless via the Rotel headphone extender): cut the mains with the
+      Rotel speaker-A toggle, drop the Flex to the IEM level. PRESET PLACEHOLDER: when
+      Andy creates "preset 2" (device index 1, sub off) in the official miniDSP app, add
+      action: rest_command.minidsp_preset with preset_index: 1 as the FIRST action.
+    triggers: []
+    conditions: []
+    actions:
+      - action: shell_command.rotel_speaker_a
+        data: {}
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: "{{ states('input_number.iem_level') }}"
+      - action: media_player.turn_off
+        target:
+          entity_id: media_player.lg_webos_tv_oled55b7p
+        data: {}
+    mode: single
+  - id: daytime_listening
+    alias: Daytime listening
+    description: "Restore the mains (speaker-A toggle) and the TV listening level"
+    triggers: []
+    conditions: []
+    actions:
+      - action: shell_command.rotel_speaker_a
+        data: {}
+      - action: number.set_value
+        target:
+          entity_id: number.minidsp_volume
+        data:
+          value: "{{ states('input_number.tv_level') }}"
+    mode: single
+  - id: minidsp_daemon_watchdog
+    alias: MiniDSP daemon watchdog
+    description: >
+      The minidspd USB receive loop can die on a Bluetooth connection event
+      (ParseError(EmptyPacket) — upstream minidsp-rs #697/#516/#191 class, present in
+      stock v0.1.12; observed 2026-10-10 when the phone connected). Audio keeps
+      playing — the daemon is control-only — but every control surface (sensor,
+      widgets, volume) freezes until the daemon restarts. EMPIRICALLY VERIFIED
+      (2026-10-11, daemon stopped live): the REST sensor flips to 'unavailable'
+      within ~20 s of control death — hence the state=unavailable trigger with a
+      2-min hold to filter momentary blips. (Healthy-daemon dedupe note: unchanged
+      values never refresh last_updated, so last-updated-age checks false-positive
+      — do not replace this with an age check.)
+    triggers:
+      - trigger: state
+        entity_id: sensor.minidsp_master
+        to: unavailable
+        for: "00:02:00"
+    conditions: []
+    actions:
+      - action: notify.mobile_app_cph2451
+        data:
+          title: "miniDSP daemon unhealthy"
+          message: >
+            The Flex control daemon's USB loop probably died (known
+            ParseError(EmptyPacket) class, minidsp-rs #697). Audio keeps playing;
+            all control is frozen. Heal: ssh andy@rvpi
+            "sudo -n systemctl restart minidspd"
+      - action: notify.persistent_notification
+        data:
+          title: "miniDSP daemon unhealthy"
+          message: >
+            sensor.minidsp_master unavailable 2+ min — restart minidspd on rvpi
+            (audio unaffected, control dead). ssh andy@rvpi "sudo -n systemctl
+            restart minidspd"
+    mode: single
