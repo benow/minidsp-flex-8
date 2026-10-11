@@ -19,7 +19,7 @@ what NASTV code is allowed to do.
 | Package automation/script | Fires when | Triggered from |
 |---|---|---|
 | `minidsp_input_toslink` (+ TV level −24) | TV becomes the active source | **`automation.tv_android`** ("TV Android": WoL → wait → select Android with retry → this) and **`automation.tv_ps3`** ("TV Game": WoL → wait → select Game with retry → this) — both as the FIRST step, before the TV wakes |
-| `minidsp_input_usb` (music level −30) | bedtime music mode | **`automation.sleep`** ("Sleep": TV off → entry light off → bed plug off → bedroom light off → this) |
+| `minidsp_input_usb` (music level −30) | daytime music mode | **`automation.morning_reset`** (package, 07:45 daily: mains ensure-on via the tracker + Rotel mute off + this) · **`automation.sleep`** sets the matching bedtime state (TV/lights off, mains cut, then this for music mode) |
 | `minidsp_input_bluetooth` | phone streaming | manual (widget) |
 | `late_night_listening` / `daytime_listening` | scene pair | manual (widget) |
 | `minidsp_volume_up/down`, mute | runtime level | manual (widget); NASTV does not drive these |

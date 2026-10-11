@@ -73,6 +73,20 @@ input_number:
     unit_of_measurement: dB
     icon: mdi:bluetooth-audio
 
+# Assumed state for the Rotel RA-1570 speaker-A mains: the amp's serial link has NO
+# read-back (verified empirically 2026-10-11: queries (`speaker_a?`, `volume?`,
+# `mute?`, `power?`) AND valid set commands (`volume_up!`) return ZERO response bytes,
+# so the amp transmits nothing on this link). speaker_a! is a TOGGLE — the only way to
+# a known state is to track it here. Every path that toggles the mains MUST maintain
+# this boolean. Initialized to 'on' (the amp runs full-time; if the assumption is ever
+# wrong, flip it once here or on the amp and it re-syncs). Residual drift source:
+# the amp's front-panel/remote speaker button — invisible to HA.
+input_boolean:
+  rotel_speakers_a:
+    name: Rotel speaker A (assumed)
+    icon: mdi:speaker
+    initial: "on"
+
 template:
   - number:
       - name: MiniDSP Volume
@@ -171,6 +185,13 @@ script:
       - action: automation.trigger
         target:
           entity_id: automation.daytime_listening
+  morning_reset:
+    alias: Morning reset
+    icon: mdi:sunrise
+    sequence:
+      - action: automation.trigger
+        target:
+          entity_id: automation.morning_reset
 
 automation:
   - id: minidsp_volume_up
@@ -283,13 +304,18 @@ automation:
     alias: Late night listening
     description: >
       Headphones (7Hz Timeless via the Rotel headphone extender): cut the mains with the
-      Rotel speaker-A toggle, drop the Flex to the IEM level. PRESET PLACEHOLDER: when
-      Andy creates "preset 2" (device index 1, sub off) in the official miniDSP app, add
-      action: rest_command.minidsp_preset with preset_index: 1 as the FIRST action.
+      Rotel speaker-A toggle (and mark the assumed-state boolean off), drop the Flex to
+      the IEM level. PRESET PLACEHOLDER: when Andy creates "preset 2" (device index 1,
+      sub off — the nighttime-listening subwoofer elimination), add action:
+      rest_command.minidsp_preset with preset_index: 1 as the FIRST action.
     triggers: []
     conditions: []
     actions:
       - action: shell_command.rotel_speaker_a
+        data: {}
+      - action: input_boolean.turn_off
+        target:
+          entity_id: input_boolean.rotel_speakers_a
         data: {}
       - action: number.set_value
         target:
@@ -303,17 +329,61 @@ automation:
     mode: single
   - id: daytime_listening
     alias: Daytime listening
-    description: "Restore the mains (speaker-A toggle) and the TV listening level"
+    description: >
+      Ensure the mains are ON (toggle only when the tracker says off — the old
+      unconditional toggle could switch them OFF) and restore the TV listening level.
     triggers: []
     conditions: []
     actions:
-      - action: shell_command.rotel_speaker_a
+      - if:
+          - condition: state
+            entity_id: input_boolean.rotel_speakers_a
+            state: "off"
+        then:
+          - action: shell_command.rotel_speaker_a
+            data: {}
+      - action: input_boolean.turn_on
+        target:
+          entity_id: input_boolean.rotel_speakers_a
         data: {}
       - action: number.set_value
         target:
           entity_id: number.minidsp_volume
         data:
           value: "{{ states('input_number.tv_level') }}"
+    mode: single
+  - id: morning_reset
+    alias: Morning reset
+    description: >
+      Set the system up for the day: daytime music mode — Flex to USB input at the
+      music level, Rotel mute explicitly OFF, mains ensured ON via the assumed-state
+      tracker (toggles only if the boolean says off, so it is idempotent). The
+      third listening mode (TV watching) is set by the TV Android / TV Game
+      orchestrators; nighttime is late_night_listening. Replaces the old
+      "Daily Reset" blind speaker-A toggle (05:00, removed from automations.yaml
+      2026-10-11 — a blind toggle flips mains OFF whenever they were already on).
+    triggers:
+      - trigger: time
+        at: "07:45:00"
+    conditions: []
+    actions:
+      - if:
+          - condition: state
+            entity_id: input_boolean.rotel_speakers_a
+            state: "off"
+        then:
+          - action: shell_command.rotel_speaker_a
+            data: {}
+      - action: input_boolean.turn_on
+        target:
+          entity_id: input_boolean.rotel_speakers_a
+        data: {}
+      - action: shell_command.rotel_mute_off
+        data: {}
+      - action: automation.trigger
+        target:
+          entity_id: automation.minidsp_input_usb
+        data: {}
     mode: single
   - id: minidsp_daemon_watchdog
     alias: MiniDSP daemon watchdog
