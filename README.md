@@ -63,12 +63,14 @@ control client alongside `minidspd`.
 
 | Doc | What's in it |
 |---|---|
+| [docs/helper-app.md](docs/helper-app.md) | **The helper application**: `minidspd`/`minidsp` (minidsp-rs) — what it is, deployment shape on the Pi, and the patch it required to work with this DSP |
 | [docs/daemon.md](docs/daemon.md) | `minidspd` setup on the Pi: API facts, write paths, gotchas |
 | [docs/source-mapping-patch.md](docs/source-mapping-patch.md) | **Input switching is broken in stock minidsp-rs v0.1.12** for the Flex Eight (hw_id 30) — the one-line patch, full build + deploy recipe, firmware state |
 | [docs/bluetooth.md](docs/bluetooth.md) | Phone pairing, LDAC/aptX HD, the quiet Bluetooth input (+ the device-side offset fix), and why "disabling" a source doesn't |
 | [docs/dirac.md](docs/dirac.md) | Dirac Live: how calibration works, our preset 1 state, the preset roadmap |
 | [docs/home-assistant.md](docs/home-assistant.md) | The HA package: entity architecture, level helpers, automations + scripts — and the widget lesson (scripts surface, automations don't) |
 | [docs/nastv-boundary.md](docs/nastv-boundary.md) | The NASTV ↔ HA ↔ Flex control-plane boundary: the three wires, which automations serve which NASTV task, the W4 plugin-trigger roadmap |
+| [docs/rotel.md](docs/rotel.md) | The Rotel power amp (RS-232 via the HA box): surviving shell_command inventory, what the Flex takeover made obsolete |
 | [docs/troubleshooting.md](docs/troubleshooting.md) | The daemon's `EmptyPacket` control-loop death (Bluetooth-triggered), the watchdog, REST sensor semantics |
 | [docs/manual-notes.md](docs/manual-notes.md) | Front-panel gestures, presets, inputs — the manual distilled, with the full text one click away |
 | [reference/flex-eight-dl-manual.txt](reference/flex-eight-dl-manual.txt) | The complete official Flex Eight (DL) manual as text (fetched from docs.minidsp.com `print_page.html`) |

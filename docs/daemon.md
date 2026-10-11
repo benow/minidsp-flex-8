@@ -3,6 +3,9 @@
 `minidsp-rs` ([mrene/minidsp-rs](https://github.com/mrene/minidsp-rs)) **v0.1.12**
 (2024-10-27, the newest release) — systemd unit `minidspd.service` on the Pi,
 listening on **0.0.0.0:5380** (HTTP + WebSocket) and `/tmp/minidsp.sock`.
+The application-level view (what it is, deployment shape, the hw_id-30 patch it
+required, ops table, upgrade policy) is [helper-app.md](helper-app.md); this page
+is the API detail.
 
 Runs with **no config file** (all defaults; `/etc/minidsp/` does not exist) and **no
 authentication** — LAN trust only. **Never port-forward :5380.**
