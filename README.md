@@ -70,6 +70,8 @@ control client alongside `minidspd`.
 | [docs/dirac.md](docs/dirac.md) | Dirac Live: how calibration works, our preset 1 state, the preset roadmap |
 | [docs/home-assistant.md](docs/home-assistant.md) | The HA package: entity architecture, level helpers, automations + scripts — and the widget lesson (scripts surface, automations don't) |
 | [docs/nastv-boundary.md](docs/nastv-boundary.md) | The NASTV ↔ HA ↔ Flex control-plane boundary: the three wires, which automations serve which NASTV task, the W4 plugin-trigger roadmap |
+| [docs/playback-pipeline.md](docs/playback-pipeline.md) | Music playback end-to-end: the chain hop by hop, the diagnostic ladder, ALSA ground-truth commands, logging/retention, known failure modes |
+| [scripts/e2e-music-probe.sh](scripts/e2e-music-probe.sh) | The playback effectiveness gate: album → push → attach → ALSA flowing → Flex, N consecutive passes |
 | [docs/rotel.md](docs/rotel.md) | The Rotel power amp (RS-232 via the HA box): surviving shell_command inventory, what the Flex takeover made obsolete |
 | [docs/troubleshooting.md](docs/troubleshooting.md) | The daemon's `EmptyPacket` control-loop death (Bluetooth-triggered), the watchdog, REST sensor semantics |
 | [docs/manual-notes.md](docs/manual-notes.md) | Front-panel gestures, presets, inputs — the manual distilled, with the full text one click away |
