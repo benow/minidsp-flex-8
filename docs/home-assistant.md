@@ -2,7 +2,8 @@
 
 All Flex control entities and automations live in **one Home Assistant package**:
 `/config/packages/minidsp.yaml` on the HA box (HAOS on a Pi at `192.168.0.11`). The
-snapshot in this repo is [`ha/minidsp.yaml`](../ha/minidsp.yaml). Packages are enabled
+**canonical master** is [`ha/minidsp.yaml`](../ha/minidsp.yaml) in this repo (the
+former nastv copy was removed 2026-10-11 when ownership moved here). Packages are enabled
 with one line in `configuration.yaml`:
 
 ```yaml
@@ -87,13 +88,12 @@ like this package in `packages/`.
 
 ## Deploy recipe
 
-Canonical copy lives in the nastv repo (`deploy/ha/packages/minidsp.yaml`); this
-repo's `ha/minidsp.yaml` is a synced snapshot. To deploy:
+Canonical copy is `ha/minidsp.yaml` in THIS repo. To deploy:
 
 ```bash
-cat deploy/ha/packages/minidsp.yaml | ssh <ha-host> "cat > /config/packages/minidsp.yaml"
+cat ha/minidsp.yaml | ssh <ha-host> "cat > /config/packages/minidsp.yaml"
 # verify the transfer
-ssh <ha-host> md5sum /config/packages/minidsp.yaml && md5sum deploy/ha/packages/minidsp.yaml
+ssh <ha-host> md5sum /config/packages/minidsp.yaml && md5sum ha/minidsp.yaml
 # reload the touched platforms (all return 200; no HA restart needed)
 curl -X POST http://<ha>:8123/api/services/template/reload      -H "Authorization: Bearer $TOKEN"
 curl -X POST http://<ha>:8123/api/services/input_number/reload  -H "Authorization: Bearer $TOKEN"

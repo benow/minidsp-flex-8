@@ -9,6 +9,33 @@ Written for two audiences: **us**, as the go-to place for tweaking the Flex; and
 **anyone else** attempting "network control of a Flex Eight" — a journey with several
 landmines this project documents in full.
 
+## This repo is the single home for all miniDSP knowledge
+
+Every Flex fact, patch, config, and failure mode lives HERE. The nastv repo
+(NASTV media server) carries **reference pointers only** — no miniDSP knowledge.
+The control-plane boundary that makes that clean:
+
+```
+NASTV  ──(HA REST/WS: trigger scripts + automations)──►  Home Assistant
+                                                            │ rest_command
+                                                            ▼
+                                                     minidspd :5380 (rvpi)
+                                                            │ USB control
+                                                            ▼
+                                                      Flex Eight
+NASTV (rvpi-flex8 player) ──(USB AUDIO only, ALSA hw:)──► Flex Eight
+```
+
+- **Control**: NASTV talks ONLY to Home Assistant (trigger the scripts/automations
+  in [ha/minidsp.yaml](ha/minidsp.yaml)); HA alone talks to the daemon. NASTV code
+  never opens `:5380`. Coordination between the two sides (which automation serves
+  which NASTV task, and the plugin-trigger roadmap) is [docs/nastv-boundary.md](docs/nastv-boundary.md).
+- **Audio**: the one NASTV-to-Flex wire is the rvpi player's bit-perfect USB audio
+  feed — the playback data path, deliberately not routed through HA (which cannot
+  carry the stream). It shares no interface with control.
+- **The HA package master is [`ha/minidsp.yaml`](ha/minidsp.yaml) in this repo** —
+  the nastv copy was removed 2026-10-11 when ownership moved here.
+
 ## The chain (our setup)
 
 ```
@@ -41,10 +68,11 @@ control client alongside `minidspd`.
 | [docs/bluetooth.md](docs/bluetooth.md) | Phone pairing, LDAC/aptX HD, the quiet Bluetooth input (+ the device-side offset fix), and why "disabling" a source doesn't |
 | [docs/dirac.md](docs/dirac.md) | Dirac Live: how calibration works, our preset 1 state, the preset roadmap |
 | [docs/home-assistant.md](docs/home-assistant.md) | The HA package: entity architecture, level helpers, automations + scripts — and the widget lesson (scripts surface, automations don't) |
+| [docs/nastv-boundary.md](docs/nastv-boundary.md) | The NASTV ↔ HA ↔ Flex control-plane boundary: the three wires, which automations serve which NASTV task, the W4 plugin-trigger roadmap |
 | [docs/troubleshooting.md](docs/troubleshooting.md) | The daemon's `EmptyPacket` control-loop death (Bluetooth-triggered), the watchdog, REST sensor semantics |
 | [docs/manual-notes.md](docs/manual-notes.md) | Front-panel gestures, presets, inputs — the manual distilled, with the full text one click away |
 | [reference/flex-eight-dl-manual.txt](reference/flex-eight-dl-manual.txt) | The complete official Flex Eight (DL) manual as text (fetched from docs.minidsp.com `print_page.html`) |
-| [ha/minidsp.yaml](ha/minidsp.yaml) | The live Home Assistant package (snapshot — canonical copy is in our nastv repo at `deploy/ha/packages/minidsp.yaml`) |
+| [ha/minidsp.yaml](ha/minidsp.yaml) | **The canonical Home Assistant package** (master — the file deployed to the HA box; docs/home-assistant.md has the recipe) |
 
 ## If you're setting up a Flex Eight for network control, read these first
 
@@ -78,9 +106,8 @@ control client alongside `minidspd`.
 
 ## House keeping
 
-- `ha/minidsp.yaml` is a synced snapshot. Canonical copy + deploy pipeline live in our
-  nastv repo (`deploy/ha/packages/minidsp.yaml`, deployed with
-  `cat <file> | ssh <ha-host> "cat > /config/packages/minidsp.yaml"` + platform
-  reloads — recipe in [docs/home-assistant.md](docs/home-assistant.md)).
+- `ha/minidsp.yaml` is the CANONICAL package (deployed to the HA box with the recipe
+  in [docs/home-assistant.md](docs/home-assistant.md)); the copy that used to live in
+  the nastv repo was removed when ownership moved here 2026-10-11.
 - No secrets anywhere in this repo: the daemon is unauthenticated by design and
   **LAN-only** (never port-forward :5380); HA tokens live outside this tree.
